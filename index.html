@@ -10,7 +10,7 @@
 	<body class="bg-white near-black">
 		<div class="courier ml4 ma6-ns mt6 mw7">
 
-			<h2 class="navy">Korede Aderele</h2>
+			<h2 id="title" class="navy">Korede Aderele</h2>
 			<!-- <h1 class="navy">Korédé Adérélé</h1> -->
 			<h3>Programmer and Photographer</h3>
 
@@ -23,12 +23,12 @@
 				I've gotten the opportunity to explore my fascinations while interning on engineering teams at Google and Coinbase, mostly on doing infrastructure/devtools work.
 			</p>
 
-			<p>Some of my free time is spent working on <a href="https://github.com/korede-ta">open source projects</a>. The rest of it is spent at the gym or on the internet.</p>
+			<p>Some of my free time is spent working on <a class="link" href="https://github.com/korede-ta">open source projects</a>. The rest of it is spent at the gym or on the internet.</p>
 
 			<p>
-				If you're interested in subscribing to a steady stream of my random thoughts, check me out <a href="https://twitter.com/korede_ta">here</a>.
+				If you're interested in subscribing to a steady stream of my random thoughts, check me out <a class="link" href="https://twitter.com/korede_ta">here</a>.
 				And if you'd also like to see some of the photos I infrequently take and even less frequently post on the internet, go
-				<a href="https://500px.com/korede_">here</a> or <a href="https://instagram.com/korede_aderele">here</a>. 
+				<a class="link" href="https://500px.com/korede_">here</a> or <a class="link" href="https://instagram.com/korede_aderele">here</a>. 
 			</p>
 
 			<p>
@@ -40,6 +40,19 @@
 			</p>
 
 		</div>
+
+		<script>
+			(function() {
+				var offset = 225; 
+				window.addEventListener('wheel', scrollWheelHandler);
+				function scrollWheelHandler() {
+					offset = (offset > 360) ? 0 : offset + 5 ;
+					var color = "hsl("+offset.toString()+", 50%, 50%)";// alert(color);
+					document.getElementById("title").style.color = color;
+					// document.getElementsByClassName("link").map(function(link) { link.style.color = color; })
+				}	
+			})();
+		</script>
 	</body>
 </html>
 
