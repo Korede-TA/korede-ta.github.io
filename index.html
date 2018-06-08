@@ -9,7 +9,7 @@
 	<body class="bg-white near-black">
 		<div class="courier ml4 ma6-ns mt6 mw7">
 
-			<img src="./twit_pic_apr_18.jpg" height="80">
+			<img id="picture" src="./no_eyes_twit_pic_apr_18.jpg" height="100">
 
 			<h2 id="title">Korede Aderele</h2>
 			<!-- <h1 class="navy">Korédé Adérélé</h1> -->
@@ -50,6 +50,7 @@
 					offset = (offset > 360) ? 0 : offset + 5 ;
 					var color = "hsl("+offset.toString()+", 50%, 50%)";// alert(color);
 					document.getElementById("title").style.color = color;
+					document.getElementById("picture").style.backgroundColor = color;
 					// document.getElementsByClassName("link").map(function(link) { link.style.color = color; })
 				}	
 			})();
