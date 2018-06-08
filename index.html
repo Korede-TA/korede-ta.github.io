@@ -45,9 +45,10 @@
 		<script>
 			(function() {
 				var offset = 225; 
-				window.addEventListener('mousemove', scrollWheelHandler);
+				// window.addEventListener('mousemove', scrollWheelHandler);
+				window.setInterval(scrollWheelHandler, 1);
 				function scrollWheelHandler() {
-					offset = (offset > 360) ? 0 : offset + 5 ;
+					offset = (offset > 360) ? 0 : offset + 1 ;
 					var color = "hsl("+offset.toString()+", 50%, 50%)";// alert(color);
 					document.getElementById("title").style.color = color;
 					document.getElementById("picture").style.backgroundColor = color;
