@@ -46,7 +46,7 @@
 			(function() {
 				var offset = 225; 
 				// window.addEventListener('mousemove', scrollWheelHandler);
-				window.setInterval(scrollWheelHandler, 1);
+				window.setInterval(scrollWheelHandler, 10);
 				function scrollWheelHandler() {
 					offset = (offset > 360) ? 0 : offset + 1 ;
 					var color = "hsl("+offset.toString()+", 50%, 50%)";// alert(color);
