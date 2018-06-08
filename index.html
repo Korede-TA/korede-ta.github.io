@@ -10,7 +10,7 @@
 		<link rel="icon" href="icon.png">
 	</head>
 	<body class="bg-white near-black">
-		<div class="courier ml4 ma6-ns mt6 mw7">
+		<div class="courier ma3 ma6-ns mt6 mw7">
 
 			<img id="picture" src="./no_eyes_twit_pic_apr_18.png" height="100">
 
@@ -43,17 +43,20 @@
 				P.S. At some point i'm going to set up a blog on here as well so stay tuned for that :)
 			</p>
 
+			<p id="tilde" class="fw8i i">~</p>
+
 		</div>
 
 		<script>
 			(function() {
-				var offset = 225; 
+				var offset = Math.floor(Math.random() * Math.floor(360)); 
 				// window.addEventListener('mousemove', scrollWheelHandler);
 				window.setInterval(scrollWheelHandler, 10);
 				function scrollWheelHandler() {
 					offset = (offset > 360) ? 0 : offset + 1 ;
 					var color = "hsl("+offset.toString()+", 50%, 50%)";// alert(color);
 					document.getElementById("title").style.color = color;
+					document.getElementById("tilde").style.color = color;
 					document.getElementById("picture").style.backgroundColor = color;
 					// document.getElementsByClassName("link").map(function(link) { link.style.color = color; })
 				}	
