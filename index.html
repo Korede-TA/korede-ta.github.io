@@ -1,67 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+---
+layout: default
+---
+<div class="courier ma3 ma6-ns mt6 mw7">
 
-		<title>Korede's Personal Website</title>
+	<img id="picture" src="./no_eyes_twit_pic_apr_18.png" height="100">
 
-		<link rel="stylesheet" href="tachyons.min.css">
-		<link rel="icon" href="icon.png">
-	</head>
-	<body class="bg-white near-black">
-		<div class="courier ma3 ma6-ns mt6 mw7">
+	<h2 id="title">Korede Aderele</h2>
+	<!-- <h1 class="navy">Korédé Adérélé</h1> -->
+	<h3>Programmer and Photographer</h3>
 
-			<img id="picture" src="./no_eyes_twit_pic_apr_18.png" height="100">
+	<p>
+		I'm fascinated with people, data and computing and I like asking questions about building technology platforms in the intersection of these subjects. 
+		The subset of these questions that fascinates me the most are those that pertain to Africa and the Global South.
+	</p>
 
-			<h2 id="title">Korede Aderele</h2>
-			<!-- <h1 class="navy">Korédé Adérélé</h1> -->
-			<h3>Programmer and Photographer</h3>
+	<p>
+		I've gotten the opportunity to explore my fascinations while interning on engineering teams at Google and Coinbase, while working on infrastructure and devtools projects.
+	</p>
 
-			<p>
-				I'm fascinated with people, data and computing and I like asking questions about building technology platforms in the intersection of these subjects. 
-				The subset of these questions that fascinates me the most are those that pertain to Africa and the Global South.
-			</p>
+	<p>Some of my free time is spent working on <a class="link" href="https://github.com/korede-ta">open source projects</a>. The rest of it is spent at the gym or on the internet.</p>
 
-			<p>
-				I've gotten the opportunity to explore my fascinations while interning on engineering teams at Google and Coinbase, mostly on doing infrastructure/devtools work.
-			</p>
+	<p>
+		If you're interested in subscribing to a steady stream of my random thoughts, check me out <a class="link" href="https://twitter.com/korede_ta">here</a>.
+		And if you'd also like to see some of the photos I infrequently take and even less frequently post on the internet, go
+		<a class="link" href="https://500px.com/korede_">here</a> or <a class="link" href="https://instagram.com/korede_aderele">here</a>. 
+	</p>
 
-			<p>Some of my free time is spent working on <a class="link" href="https://github.com/korede-ta">open source projects</a>. The rest of it is spent at the gym or on the internet.</p>
+	<p>
+		Finally, if you'd like to start a virtual conversation, or set up an in-person one (preferably over coffee), feel free to email me at korede [at] drexel [dot] edu.
+	</p>
 
-			<p>
-				If you're interested in subscribing to a steady stream of my random thoughts, check me out <a class="link" href="https://twitter.com/korede_ta">here</a>.
-				And if you'd also like to see some of the photos I infrequently take and even less frequently post on the internet, go
-				<a class="link" href="https://500px.com/korede_">here</a> or <a class="link" href="https://instagram.com/korede_aderele">here</a>. 
-			</p>
+	<p>
+		P.S. At some point i'm going to set up a blog on here as well so stay tuned for that :)
+	</p>
 
-			<p>
-				Finally, if you'd like to start a virtual conversation, or set up an in-person one (preferably over coffee), feel free to email me at korede [at] drexel [dot] edu.
-			</p>
+	<p id="tilde" class="fw8 i f3">~</p>
 
-			<p>
-				P.S. At some point i'm going to set up a blog on here as well so stay tuned for that :)
-			</p>
+</div>
 
-			<p id="tilde" class="fw8 i f3">~</p>
-
-		</div>
-
-		<script>
-			(function() {
-				var offset = Math.floor(Math.random() * Math.floor(360)); 
-				// window.addEventListener('mousemove', scrollWheelHandler);
-				window.setInterval(scrollWheelHandler, 10);
-				function scrollWheelHandler() {
-					offset = (offset > 360) ? 0 : offset + 1 ;
-					var color = "hsl("+offset.toString()+", 50%, 50%)";// alert(color);
-					document.getElementById("title").style.color = color;
-					document.getElementById("tilde").style.color = color;
-					document.getElementById("picture").style.backgroundColor = color;
-					// document.getElementsByClassName("link").map(function(link) { link.style.color = color; })
-				}	
-			})();
-		</script>
-	</body>
-</html>
-
+<script>
+	(function() {
+		var offset = Math.floor(Math.random() * Math.floor(360)); 
+		// window.addEventListener('mousemove', scrollWheelHandler);
+		window.setInterval(scrollWheelHandler, 10);
+		function scrollWheelHandler() {
+			offset = (offset > 360) ? 0 : offset + 1 ;
+			var color = "hsl("+offset.toString()+", 50%, 50%)";// alert(color);
+			document.getElementById("title").style.color = color;
+			document.getElementById("tilde").style.color = color;
+			document.getElementById("picture").style.backgroundColor = color;
+			// document.getElementsByClassName("link").map(function(link) { link.style.color = color; })
+		}	
+	})();
+</script>
