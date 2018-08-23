@@ -1,11 +1,11 @@
 ---
 layout: default 
-title: Is this thing on?
+title: init() // Is this thing on?
 permalink: init
 post: true
 ---
 
-# init()
+# init() // Is this thing on?
 
 Having put a tiny bit of work into this, and having bought a domain name (or two) to peg this github pages site to, I hope I will be inspired to write more and put my writing out there.
 
