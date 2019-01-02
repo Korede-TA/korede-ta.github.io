@@ -1,1 +1,6 @@
 url: https://agbalumo.co
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
