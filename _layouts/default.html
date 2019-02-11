@@ -47,7 +47,10 @@
 					//var pictureWidth = document.getElementById("picture").width;
 
 					var mouseClicked = false;
-					canvas.addEventListener("mousedown", function (e) {
+
+					var pos = {x: 0, y: 0}; function setPos(e) { pos.x = e.clientX-canvas.offsetLeft; pos.y = e.clientY-canvas.offsetTop };
+
+					function initDraw(e) {
 						if (canvasEngaged === false) { // if canvas hasn't been engaged, engage it and do an animation of it growing
 							canvas.style.cursor = "cell";
 
@@ -66,53 +69,47 @@
 							canvasEngaged = true;
 						}
 						mouseClicked = true;
-					}, false);
-					canvas.addEventListener("mouseup", function (e) {
+					}
+
+				   function onDraw(e){
+				   	if (canvasEngaged === false) { return; } // if canvas hasn't been engaged, ignore event
+				   	// draw path
+				   	if (mouseClicked === false) { return ;} 
+				   	/* // alternate drawing code
+				   		ctx.beginPath();
+				   		ctx.lineCap = 'round';
+				   		ctx.arc(e.clientX, e.clientY, 7.5, 0, Math.PI * 2, false);
+				   		ctx.lineWidth = 5;
+				   		ctx.strokeStyle = globalColor;
+				   		ctx.stroke();
+				   	*/
+
+				   	ctx.beginPath(); // begin
+				   	ctx.lineWidth = 5;
+				   	ctx.lineCap = 'round';
+				   	ctx.strokeStyle = globalColor;
+				   	ctx.moveTo(pos.x, pos.y); // from
+				   	setPos(e);
+				   	ctx.lineTo(pos.x, pos.y); // to
+				   	ctx.stroke();
+				   }
+
+					function stopDraw(e) {
 						if (canvasEngaged === false) { return; } // if canvas hasn't been engaged, ignore event
 						// stop drawing 
 						mouseClicked = false;
-					}, false);
-					canvas.addEventListener("mouseout", function (e) {
-						if (canvasEngaged === false) { return; } // if canvas hasn't been engaged, ignore event
-						// stop drawing 
-						mouseClicked = false;
-					}, false);
+					}
 
-					var pos = {x: 0, y: 0}; function setPos(e) { pos.x = e.clientX-canvas.offsetLeft; pos.y = e.clientY-canvas.offsetTop };
+					canvas.addEventListener("mousedown", function (e) { e.preventDefault(); initDraw(e); }, false);
 
-					canvas.addEventListener("mousemove", function (e) {
-						if (canvasEngaged === false) { return; } // if canvas hasn't been engaged, ignore event
-						// draw path
-						if (mouseClicked === false) { return ;} 
-						/* // alternate drawing code
-							ctx.beginPath();
-							ctx.lineCap = 'round';
-							ctx.arc(e.clientX, e.clientY, 7.5, 0, Math.PI * 2, false);
-							ctx.lineWidth = 5;
-							ctx.strokeStyle = globalColor;
-							ctx.stroke();
-						*/
+					canvas.addEventListener("mousemove", onDraw, false);
+					canvas.addEventListener("touchmove", function (e) { e.preventDefault(); onDraw(e); }, false);
 
-						ctx.beginPath(); // begin
-						ctx.lineWidth = 5;
-						ctx.lineCap = 'round';
-						ctx.strokeStyle = globalColor;
-						ctx.moveTo(pos.x, pos.y); // from
-						setPos(e);
-						ctx.lineTo(pos.x, pos.y); // to
-						ctx.stroke();
-					}, false);
+					canvas.addEventListener("mouseup", stopDraw, false);
+					canvas.addEventListener("mouseout", stopDraw, false);
+					canvas.addEventListener("touchend", function (e) { e.preventDefault(); stopDraw(e); }, false);
 				});
 
-				// hacky sleep function stolen from here: https://stackoverflow.com/a/16873849/6641502
-				function sleep(milliseconds) {
-					var start = new Date().getTime();
-					for (var i = 0; i < 1e7; i++) {
-						if ((new Date().getTime() - start) > milliseconds){
-							break;
-						}
-					}
-				}
 			})();
 		</script>
 	</head>
