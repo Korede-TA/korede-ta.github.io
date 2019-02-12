@@ -113,6 +113,12 @@
 					};
 				}
 
+				function openDrawingInNewTab(e) {
+					var url = e.target.toDataURL();
+					var tab = window.open(); 
+					tab.document.body.innerHTML = "<img src="+ url +">";
+				}
+
 				document.addEventListener("DOMContentLoaded", function(event) {
 					canvas = document.getElementById("picture_canvas");
 					ctx = canvas.getContext("2d");
@@ -138,6 +144,8 @@
 					canvas.addEventListener("mouseup", stopDraw, false);
 					canvas.addEventListener("mouseout", stopDraw, false);
 					canvas.addEventListener("touchend", wrapTouchEvent(stopDraw), false);
+
+					canvas.addEventListener("dblclick", openDrawingInNewTab);
 				});
 
 			})();
