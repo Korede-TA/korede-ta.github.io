@@ -1,184 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
+{% include head.html %}
 
-		<link rel="stylesheet" href="../tachyons.min.css">
-		<link rel="icon" href="../2_jul_18_noalpha.gif">
+<body class="content bg-white near-black">
+	<div class="sans-serif ma3 ma6-ns mt6 mw7">
+		{% if page.post %}
+			{% include home_anchor.html %}
+		{% endif %}
+		{{ content }}
+		<p id="tilde" class="fw8 i f3">~</p>
 
-		<title>Is this Korede's website?</title>
-		<!--<script src="/color.js"></script>-->
+		<!--<a class="log_link" href="https://www.notion.so/log-drafts-bbd9fba375e042ffba0d18ab195b4467">
+			<h4>Log</h4>
+		</a>-->
 
-		<script>
-			(function() {
-				// window.addEventListener('mousemove', scrollWheelHandler);
-
-				var globalColor, canvas, ctx, img;
-
-				var canvasEngaged = false;
-
-				var offset = Math.floor(Math.random() * Math.floor(360)); 
-
-				var coloredElemFuncs = {
-					"title": function (color) { try { document.getElementById("title").style.color = color; } catch {} },
-					"tilde": function (color) { try { document.getElementById("tilde").style.color = color; } catch {} },
-					"picture": function (color) { try { document.getElementById("picture").style.backgroundColor = color; } catch {} },
-					"return": function (color) { try { document.getElementById("return").style.color = color; } catch {} },
-					"picture_canvas": function (color) { try { document.getElementById("picture_canvas").style.backgroundColor = color; } catch {} },
-				};
- 
-				function colorChangeHandler() {
-					offset = (offset > 360) ? 0 : offset + 1 ;
-					var color = "hsl("+offset.toString()+", 50%, 50%)";// alert(color);
-					globalColor = color;
-					var elems = Object.keys(coloredElemFuncs)
-					for (var i=0; i<elems.length; i++) {
-						coloredElemFuncs[elems[i]](color);
-					}
-					//document.getElementsByClassName("link").map(function(link) { link.style.color = color; })
-				}	
-
-				function loadScript(url) {
-					var fileref=document.createElement('script');
-					fileref.setAttribute("type","text/javascript");
-					fileref.setAttribute("src", url);
-					if (typeof fileref != "undefined") { document.body.appendChild(fileref); }
-				}
-				//var pictureWidth = document.getElementById("picture").width;
-
-				var mouseClicked = false;
-
-				var pos = {x: 0, y: 0}; function setPos(e) { pos.x = e.clientX-canvas.offsetLeft; pos.y = e.clientY-canvas.offsetTop };
-
-				function initDraw(e) {
-					if (canvasEngaged === false) { // if canvas hasn't been engaged, engage it and do an animation of it growing
-						canvas.style.cursor = "cell";
-
-						var intervalCallCount = 0;
-						var interval = setInterval(function() {
-							canvas.width  += 40;
-							canvas.height += 40;
-							ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-							/* TODO: figure out why shaking animation doesn't work here
-								canvas.style.animation = "shake 0.2s";
-								canvas.style.WebkitAnimation = "shake 0.2s";
-								canvas.style.animationIterationCount = "infinite";
-							*/
-
-							if (++intervalCallCount === 10) {
-								window.clearInterval(interval);
-							}
-						}, 15);
-						canvasEngaged = true;
-					}
-					mouseClicked = true;
-				}
-
-				function onDraw(e){
-					if (canvasEngaged === false) { return; } // if canvas hasn't been engaged, ignore event
-					// draw path
-					if (mouseClicked === false) { return ;} 
-					/*
-						// alternate drawing code
-						ctx.beginPath();
-						ctx.lineCap = 'round';
-						ctx.arc(pos.x, pos.y, 7.5, 0, Math.PI * 2, false);
-						setPos(e);
-						ctx.lineWidth = 5;
-						ctx.strokeStyle = globalColor;
-						ctx.stroke();
-					*/
-
-				
-					ctx.beginPath(); // begin
-					ctx.lineWidth = 5;
-					ctx.lineCap = 'round';
-					ctx.strokeStyle = globalColor;
-					ctx.moveTo(pos.x, pos.y); // from
-					setPos(e);
-					ctx.lineTo(pos.x, pos.y); // to
-					ctx.stroke();
-					
-				}
-
-				function stopDraw(e) {
-					if (canvasEngaged === false) { return; } // if canvas hasn't been engaged, ignore event
-					// stop drawing 
-					mouseClicked = false;
-				}
-
-				function wrapTouchEvent(f) {
-					return function(e) {
-						if (e.target == canvas) { e.preventDefault(); }
-						f(e);
-					};
-				}
-
-				function openDrawingInNewTab(e) {
-					var url = e.target.toDataURL();
-					var tab = window.open(); 
-					tab.document.body.innerHTML = "<img src="+ url +">";
-				}
-
-				document.addEventListener("DOMContentLoaded", function(event) {
-					canvas = document.getElementById("picture_canvas");
-					ctx = canvas.getContext("2d");
-					img = new Image;
-					canvas.width = 100;
-					canvas.style.cursor = "help";
-
-					img.onload = function() {
-						ctx.imaegSmoothingQuality = "low";
-						ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-					}
-					img.src = "./no_eyes_2_jul_18_noalpha.png";
-
-
-					window.setInterval(colorChangeHandler, 10);
-
-					canvas.addEventListener("mousedown", initDraw, false);
-					canvas.addEventListener("touchstart", wrapTouchEvent(initDraw), false);
-
-					canvas.addEventListener("mousemove", onDraw, false);
-					canvas.addEventListener("touchmove", wrapTouchEvent(onDraw), false);
-
-					canvas.addEventListener("mouseup", stopDraw, false);
-					canvas.addEventListener("mouseout", stopDraw, false);
-					canvas.addEventListener("touchend", wrapTouchEvent(stopDraw), false);
-
-					canvas.addEventListener("dblclick", openDrawingInNewTab);
-				});
-
-			})();
-		</script>
-	</head>
-	<body class="content bg-white near-black">
-		<div class="courier ma3 ma6-ns mt6 mw7">
-			{% if page.post %}
-				<a id="return" href="/" class="no-underline">
-					<h2>
-						<img src="../twit_pic_apr_18_gif.gif" class="dib dim" height="30"> agbalumo.co
-					</h2>
-				</a>
-			{% endif %}
-			{{ content }}
-			<p id="tilde" class="fw8 i f3">~</p>
-
-			<!--<a class="log_link" href="https://www.notion.so/log-drafts-bbd9fba375e042ffba0d18ab195b4467">
-				<h4>Log</h4>
-			</a>-->
-
-			<!-- <h4>Rants</h4>
-			<ul class="list">
-				{% for post in site.posts %}
-					<li>
-						<a href="{{ post.url }}"> {{ post.title }} </a>
-					</li>
-					<br/>
-				{% endfor %}
-			</ul>
-			-->
-		</div>
-	</body>
-</html>
+		<!-- <h4>Rants</h4>
+		<ul class="list">
+			{% for post in site.posts %}
+				<li>
+					<a href="{{ post.url }}"> {{ post.title }} </a>
+				</li>
+				<br/>
+			{% endfor %}
+		</ul>
+		-->
+	</div>
+</body>
