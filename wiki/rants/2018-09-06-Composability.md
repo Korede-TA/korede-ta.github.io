@@ -62,5 +62,3 @@ References:
 - google scholar results for "software transactional memory": [https://scholar.google.com/scholar?as_ylo=2005&q="software+transactional+memory"](https://scholar.google.com/scholar?as_ylo=2005&q=%22software+transactional+memory%22)
 - Your Server as a Function → [https://monkey.org/~marius/funsrv.pdf](https://monkey.org/~marius/funsrv.pdf)
 - Charismatic Technology:  [http://morganya.org/research/Ames-charisma-aarhus.pdf](http://morganya.org/research/Ames-charisma-aarhus.pdf) (seems to neglect lisp and smalltalk)
-
-*more [assorted rants](https://www.notion.so/bbd9fba3-75e0-42ff-ba0d-18ab195b4467)*

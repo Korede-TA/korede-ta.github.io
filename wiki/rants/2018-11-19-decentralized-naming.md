@@ -17,5 +17,3 @@ to give some background, about a year ago i was really fascinated with the idea 
 perhaps some kind of dedicated protocol for providing distributed nameservers for different distributed services could be a major stepping stone in web3.0
 
 i think solutions like handshake ([https://handshake.org/](https://handshake.org/)) are aimed at solving this and i'm excited to see how that turns out.
-
-*more [assorted rants](https://www.notion.so/bbd9fba3-75e0-42ff-ba0d-18ab195b4467)*
