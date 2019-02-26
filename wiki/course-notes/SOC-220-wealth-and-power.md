@@ -26,10 +26,6 @@ domhoff reading:
     5. liberal
     6. progressive left
 
- 
-
-[Untitled](https://www.notion.so/87c17efb55414af1911dce0b19297ed4)
-
 details of political spectrum
 
 **religious right**
@@ -86,7 +82,7 @@ evol
 
 **corporation as an agreement/contract** → a set of legal agreements/contracts that define the relationships and bounds thereof between members, especially in the context of profit splitting and governance of the larger body (jointly referred to as, stake)
 
-**directors as central to the corporation** → ****boards of directors often serve as the one defining top-level feature of corporations which are responsible for decision amaking, governance, revenue allocation/compensation e.t.c.
+**directors as central to the corporation** → **boards of directors often serve as the one defining top-level feature of corporations which are responsible for decision amaking, governance, revenue allocation/compensation e.t.c.
 
 **melding of banks and trusts/corporations** → going from an age of banks being specific to industries and the trusts who governed them (ex: mellon bank for the steel industry controlled by the carnegie steel industries trust), to an age of this industry-specific bank function being absorbed into the larger corporation (ex: general electics bank function being more powerful/profitable than its regular marketing function)
 
@@ -194,7 +190,7 @@ non-elite opinion shaping network
 
 ## midterm review:
 
-[https://s3.us-east-1.amazonaws.com/blackboard.learn.xythos.prod/5a3199fc4282a/8999451?response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27MidtermMaterialsSoc220F19.pdf&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190129T211315Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Credential=AKIAIL7WQYDOOHAZJGWQ%2F20190129%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=1f94a4b4a30a4267ede9a549aa0585c0b8a2a4d5ba2b72cecf30baffecd20261](https://s3.us-east-1.amazonaws.com/blackboard.learn.xythos.prod/5a3199fc4282a/8999451?response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27MidtermMaterialsSoc220F19.pdf&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20190129T211315Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21600&X-Amz-Credential=AKIAIL7WQYDOOHAZJGWQ%2F20190129%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=1f94a4b4a30a4267ede9a549aa0585c0b8a2a4d5ba2b72cecf30baffecd20261)
+[*missing link*]
 
 [midterm materials](https://www.notion.so/11c5c13fe8ff4be28737d60eed7ffcec)
 
@@ -304,7 +300,7 @@ properties include:
 
 "fork in the road" circa 1978 → 2 kinds of economies, the kind we're used to and Brazil which was a very unequal society with tiny 
 
-"death to keynsianism", "death to liberal 'socialism'", with **keynsianism** referring to "your grandfather's capitalism" around industrialism and growing middle class, new deal e.t.c.
+"death to keynsianism", "death to liberal 'socialism'", with **keynesianism** referring to "your grandfather's capitalism" around industrialism and growing middle class, new deal e.t.c.
 
 **keynsianism** was designed to prevent the rise of communist/socialist radicalism. an approach to "save" capitalism through a political-economic strategy by giving people a higher standard of living through government intervention
 
@@ -424,11 +420,11 @@ common thought on human behavior transitioned from religion to the "age of reaso
 
 - 
 
-criticisms of rational action theory
+**criticisms of rational action theory**
 
 - question: "how does the impact of the twin forces of rationalism and the mechanistic-scientific worldview affect the understanding of the human behavior and ethics characteristic of classical political economy?"
 - there was a bit of a push back to rational action theory in the 18th century by the romantic movement that didn't believe in such a mathematical view of human behavior.
-- behaviorism is a dynamic term which offers the key idea of "**reinforcement**", a framework by which rewards/punishment are used to incentivize/de-incentivize certain kinds of behavior
+- behaviorism is a dynamic term which offers the key idea of **"reinforcement"**, a framework by which rewards/punishment are used to incentivize/de-incentivize certain kinds of behavior
 	- there's the impression that rewards are a lot more effective than punishment in achieving reinforcement in either direction
 	- also, random rewards are more of an incentive than scheduled reinforcement lest actors come to be used to rewards
 	- another aspect to consider is the idea that rewards and punishments are subjective, not
@@ -438,15 +434,15 @@ criticisms of rational action theory
 	- background is in the Netherlands at the early days of modern capitalism, marking the beginning of the ideology whereby making the maximum amount of money is equivalent to doing the most amount of good
 	- the contrast between this "greed is good" outlook vs the traditional judeo-christian outlook on greed as a cardinal sin ⇒ this came as a result of Holland being kind of the center of the protestant movement (calvinism in a form)
 
-		*calvinists believe that the true chosen people aren't the jews but the calvinism themselves → and that people are pre-destined (prior to birth) whether or not they go to heaven* 
+*calvinists believe that the true chosen people aren't the jews but the calvinism themselves → and that people are pre-destined (prior to birth) whether or not they go to heaven* 
 
-		calvinist protestanism evolved into the general "people who are rich are good" and "people who are poor are bad" outlook (which was institutionally formalized as the *Dutch Reform Church* a.k.a. the racist apartheid-championing church in south africa)
+calvinist protestanism evolved into the general "people who are rich are good" and "people who are poor are bad" outlook (which was institutionally formalized as the *Dutch Reform Church* a.k.a. the racist apartheid-championing church in south africa)
 
-		**utilitarianism** → the greatest good for the greatest many → marked an ideological transition from right/wrong to good/bad
+**utilitarianism** → the greatest good for the greatest many → marked an ideological transition from right/wrong to good/bad
 
-	**looking critically at naturalism** we realize that is suggests that all incentives or driving forces on individuals come as a result of *external* forces and doesn't take into account internal motivation... while in reality, there's internal forces that actually directly determine people's behavior, and external forces are always proxied via internal forces that differ from actor to actor. indeed internal forces can be influenced by different external forces that are encountered over time, meaning that the history of an actor is also relevant to how they behave.
+**looking critically at naturalism** we realize that is suggests that all incentives or driving forces on individuals come as a result of *external* forces and doesn't take into account internal motivation... while in reality, there's internal forces that actually directly determine people's behavior, and external forces are always proxied via internal forces that differ from actor to actor. indeed internal forces can be influenced by different external forces that are encountered over time, meaning that the history of an actor is also relevant to how they behave.
 
-	an interesting way to port this contrast over to programming language theory is in comparing stateless/pure functions and stateful functions (object/classes) → stateless functions (agents who, according to naturalism, are only influenced by external factors) have their output fully determined by their input parameters and always return the same **vs** stateful functions (agents in a practical context who have dynamic internal motivations) who hold onto some internal state which might be manipulated by any parameters passed to it over a programs lifetime
+an interesting way to port this contrast over to programming language theory is in comparing stateless/pure functions and stateful functions (object/classes) → stateless functions (agents who, according to naturalism, are only influenced by external factors) have their output fully determined by their input parameters and always return the same **vs** stateful functions (agents in a practical context who have dynamic internal motivations) who hold onto some internal state which might be manipulated by any parameters passed to it over a programs lifetime
 
 the reading "Greed inc" aims to explore the dynamics of morality in how we look at the global economic system
 
@@ -459,3 +455,28 @@ it's interesting to think about how concepts of credit and money management are 
 - this one was pretty resonant in how NY is building it's own "blank slate city" for its elite, not unlike Lagos is building Eko atlantic for it's own elite.
 	- there's a pattern of elite migrating to new urban enclaves to separate themselves from the proletariat: first they moved to the suburbs, and then to the high-rise urban enclaves like hudson yards: similarly to how lagos' elite moved further along the peninsula to victoria island, lekki and then epe only to reclaim land from the sea for their new enclave in Eko Atlantic.
 	-
+
+**notes on "greed inc." chapter 5 & 6**
+
+[Greed Inc.: Why Corporations Rule Our World and How We Let It Happen](https://www.amazon.com/Greed-Inc-Corporations-World-Happen/dp/0887621767)
+
+these chapter's mainly analyze the relationship between economics and morality
+
+tranditional rationalist definitions of morality insist that there needs to be some structure of incentives that encourages/discourages morality or immorality
+
+however, as chomsky asserts, morality mainly comes as a result of the social (and economic) contexts in which we exist. much like children are able to pick up any language in the environment they grow up without incentives or pre-emption, so are our morals assimilated from our environment.
+
+
+- **ethical absolutism** set of rules or precepts, ideas of right/wrong that are always "true". emphasizes moral binaries as opposed to moral spectrums. built on a notion of moral truth that are 100% universal
+
+- **ethical relativism** (aka situational ethics) no absoulte truth or right/wrong. what is right is always dependent on the given situation. morality is completely subjective
+
+- **ethical realism** based on real world "events" which determine moral meaning. this means that moral values and judgments are as a result of people's perspectives and situations -- a person in the middle east might have very different views on conflict in the region than an american, or a person in the 17th century might have generally different 
+
+
+**notes on "greed inc." chapter 7**
+
+how did corporations come to be regarded as persons under the law?
+
+the evolution of corporations...
+
