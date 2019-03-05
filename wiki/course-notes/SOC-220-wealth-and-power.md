@@ -480,3 +480,14 @@ how did corporations come to be regarded as persons under the law?
 
 the evolution of corporations...
 
+[i still need to fill these bits out]
+
+**notes on "" documentary**
+
+a big part of the premise/thesis of this was in comparing corporations, who were given "individual" status under the law as a part of the 14th amendement in the US, to psycopathic individuals who work solely for their own profit with an absence of morals and principles
+
+some of the themes explored include thoughts about separating the corporation as a concrete entity from it's constituent/associated member individuals
+
+another theme was around the corporation as a means for privatizinfg and being the main harbinger of an elimination of the commons
+
+
