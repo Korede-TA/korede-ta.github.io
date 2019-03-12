@@ -515,3 +515,5 @@ reforms include (these mostly apply to *large* corporations):
 - putting the needs of people first instead of shareholders in the operation of corporations
 
 in essence, Roland's suggestions can be summarized in terms of, not quite the structure of corporations but *changing the "source code"* of corporations in form of the shareholder agreements, charters and employee agreements to align with bringing the most value to people or the nation at large
+
+interesting side point: in italy, Fiat motor company is publically owned. in England, it's a similar thing with many of the industries. indeed the idea of state/government-owned enterprise as opposed to corporations is one whereby _people_ have ownership (albeit by proxy) over these organizations. additionally, corporations which are touted as the counter to having a sort of "governmental elite" in control of value are actually a direct reflection of this whereby a "social elite" have control over the means of production. in a sense this inversion psy-op over who actually is the elite has been characteristic of socioeconomic discourse over much of the last century
