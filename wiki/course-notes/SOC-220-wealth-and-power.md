@@ -505,3 +505,13 @@ chapter 11 focuses on how coroprate capitalism created the social role and ident
 
 1. correct consumption for success
 2. democracy of consumption
+
+chapter 14 tries to make some "common sense about corporations" and suggest reforms/changes around curbing corporate power and putting it back in control of humans.
+reforms include (these mostly apply to *large* corporations):
+
+- repealing corporate personhood
+- large corporations, much like armies, are a necessary evil and should be treated the same -- they should be subject to control by the government (remember however that corporations are effectively a product of the government)
+    (indeed this is resonant because much of the oft-trumpeted merits of corporations apply more in the context of small corporations and )
+- putting the needs of people first instead of shareholders in the operation of corporations
+
+in essence, Roland's suggestions can be summarized in terms of, not quite the structure of corporations but *changing the "source code"* of corporations in form of the shareholder agreements, charters and employee agreements to align with bringing the most value to people or the nation at large
