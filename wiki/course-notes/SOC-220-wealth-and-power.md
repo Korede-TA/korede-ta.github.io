@@ -482,7 +482,7 @@ the evolution of corporations...
 
 [i still need to fill these bits out]
 
-**notes on "" documentary**
+**notes on "the corporation" documentary**
 
 a big part of the premise/thesis of this was in comparing corporations, who were given "individual" status under the law as a part of the 14th amendement in the US, to psycopathic individuals who work solely for their own profit with an absence of morals and principles
 
@@ -491,3 +491,17 @@ some of the themes explored include thoughts about separating the corporation as
 another theme was around the corporation as a means for privatizinfg and being the main harbinger of an elimination of the commons
 
 
+# week 9
+
+**continued: notes on Roland's thoughts on corporations as moral entities**
+
+also: discussion of finals & documentary from last class
+
+# week 10
+
+some other meta thoughts from chapter 11 of Rowland
+
+chapter 11 focuses on how coroprate capitalism created the social role and identity of the consumer
+
+1. correct consumption for success
+2. democracy of consumption
