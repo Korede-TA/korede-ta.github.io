@@ -298,7 +298,7 @@ properties include:
 
 	**rentism** reflects the common profit paradigm of charging minimally over long periods of time for perpetual profit, "passive income"
 
-"fork in the road" circa 1978 → 2 kinds of economies, the kind we're used to and Brazil which was a very unequal society with tiny 
+"fork in the road" circa 1978 → 2 kinds of economies, the kind we're used to and Brazil which was a very unequal society with tiny upper and middle class
 
 "death to keynsianism", "death to liberal 'socialism'", with **keynesianism** referring to "your grandfather's capitalism" around industrialism and growing middle class, new deal e.t.c.
 
@@ -517,3 +517,20 @@ reforms include (these mostly apply to *large* corporations):
 in essence, Roland's suggestions can be summarized in terms of, not quite the structure of corporations but *changing the "source code"* of corporations in form of the shareholder agreements, charters and employee agreements to align with bringing the most value to people or the nation at large
 
 interesting side point: in italy, Fiat motor company is publically owned. in England, it's a similar thing with many of the industries. indeed the idea of state/government-owned enterprise as opposed to corporations is one whereby _people_ have ownership (albeit by proxy) over these organizations. additionally, corporations which are touted as the counter to having a sort of "governmental elite" in control of value are actually a direct reflection of this whereby a "social elite" have control over the means of production. in a sense this inversion psy-op over who actually is the elite has been characteristic of socioeconomic discourse over much of the last century
+
+**some notes on socialism's recent re-emergence in the public eye**
+the news media in the US has recently started talking a lot about socialism and discussions around this and the alignment of members of the democratic party with socialism is bringing more policy decisions around socialist principles into the eye of congress.
+
+socialism in the most raw sense is around the governemnt  playing a big role in various support projects and the standard of living of the public.
+
+indeed, socialism itself is a pretty fragmented ideology with multiple factions, most prominently, democratic socialists and radical/marxist socialists.
+
+democratic socialism, popular in european countries in the form of "social democracy" is one where by public projects are used to ensure a certain standard of living. 
+US democratic socialism under FDR's "right social democracy" was more oriented towards making capitalism seem like a more viable alternative to full-on communism in eastern europe. FDR liberalism was more oriented around top-down reform from the government.
+
+On the other hand, left wing/radical socialism is more centered around social movements through mass public pressure. It is centered around structural changes that puts more of the power for pressuring the government to uphold the constitution in the hands of the public. This kind of radicalism is aligned with movements like the civil rights movement.
+
+Another big point in radical socialism is in modifying the _property rights of big capital_ in order to have public banks/institutions serve the public interest as opposed to the interests of a small group of stakeholders (as opposed to more capitalistic approaches like tax)
+small businesses however are not a target of restructing under even radical socialism.
+
+
