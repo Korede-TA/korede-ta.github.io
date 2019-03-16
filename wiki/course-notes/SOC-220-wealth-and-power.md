@@ -298,7 +298,7 @@ properties include:
 
 	**rentism** reflects the common profit paradigm of charging minimally over long periods of time for perpetual profit, "passive income"
 
-"fork in the road" circa 1978 → 2 kinds of economies, the kind we're used to and Brazil which was a very unequal society with tiny 
+"fork in the road" circa 1978 → 2 kinds of economies, the kind we're used to and Brazil which was a very unequal society with tiny upper and middle class
 
 "death to keynsianism", "death to liberal 'socialism'", with **keynesianism** referring to "your grandfather's capitalism" around industrialism and growing middle class, new deal e.t.c.
 
@@ -482,12 +482,55 @@ the evolution of corporations...
 
 [i still need to fill these bits out]
 
-**notes on "" documentary**
+**notes on "the corporation" documentary**
 
 a big part of the premise/thesis of this was in comparing corporations, who were given "individual" status under the law as a part of the 14th amendement in the US, to psycopathic individuals who work solely for their own profit with an absence of morals and principles
 
 some of the themes explored include thoughts about separating the corporation as a concrete entity from it's constituent/associated member individuals
 
 another theme was around the corporation as a means for privatizinfg and being the main harbinger of an elimination of the commons
+
+
+# week 9
+
+**continued: notes on Roland's thoughts on corporations as moral entities**
+
+also: discussion of finals & documentary from last class
+
+# week 10
+
+some other meta thoughts from chapter 11 of Rowland
+
+chapter 11 focuses on how coroprate capitalism created the social role and identity of the consumer
+
+1. correct consumption for success
+2. democracy of consumption
+
+chapter 14 tries to make some "common sense about corporations" and suggest reforms/changes around curbing corporate power and putting it back in control of humans.
+reforms include (these mostly apply to *large* corporations):
+
+- repealing corporate personhood
+- large corporations, much like armies, are a necessary evil and should be treated the same -- they should be subject to control by the government (remember however that corporations are effectively a product of the government)
+    (indeed this is resonant because much of the oft-trumpeted merits of corporations apply more in the context of small corporations and )
+- putting the needs of people first instead of shareholders in the operation of corporations
+
+in essence, Roland's suggestions can be summarized in terms of, not quite the structure of corporations but *changing the "source code"* of corporations in form of the shareholder agreements, charters and employee agreements to align with bringing the most value to people or the nation at large
+
+interesting side point: in italy, Fiat motor company is publically owned. in England, it's a similar thing with many of the industries. indeed the idea of state/government-owned enterprise as opposed to corporations is one whereby _people_ have ownership (albeit by proxy) over these organizations. additionally, corporations which are touted as the counter to having a sort of "governmental elite" in control of value are actually a direct reflection of this whereby a "social elite" have control over the means of production. in a sense this inversion psy-op over who actually is the elite has been characteristic of socioeconomic discourse over much of the last century
+
+**some notes on socialism's recent re-emergence in the public eye**
+the news media in the US has recently started talking a lot about socialism and discussions around this and the alignment of members of the democratic party with socialism is bringing more policy decisions around socialist principles into the eye of congress.
+
+socialism in the most raw sense is around the governemnt  playing a big role in various support projects and the standard of living of the public.
+
+indeed, socialism itself is a pretty fragmented ideology with multiple factions, most prominently, democratic socialists and radical/marxist socialists.
+
+democratic socialism, popular in european countries in the form of "social democracy" is one where by public projects are used to ensure a certain standard of living. 
+US democratic socialism under FDR's "right social democracy" was more oriented towards making capitalism seem like a more viable alternative to full-on communism in eastern europe. FDR liberalism was more oriented around top-down reform from the government.
+
+On the other hand, left wing/radical socialism is more centered around social movements through mass public pressure. It is centered around structural changes that puts more of the power for pressuring the government to uphold the constitution in the hands of the public. This kind of radicalism is aligned with movements like the civil rights movement.
+
+Another big point in radical socialism is in modifying the _property rights of big capital_ in order to have public banks/institutions serve the public interest as opposed to the interests of a small group of stakeholders (as opposed to more capitalistic approaches like tax)
+small businesses however are not a target of restructing under even radical socialism.
 
 
