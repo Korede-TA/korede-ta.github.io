@@ -1,9 +1,11 @@
 {% include head.html %}
 
-<body class="content bg-white near-black">
-	<div class="sans-serif ma3 ma6-ns mt6 mw7">
+<body class="content bg-white near-black flex flex-row">
+	<div class="sans-serif ma3 ma6-ns mt6 mw7 fl w-60-l w-100-ns">
 		{% if page.post %}
 			{% include home_anchor.html %}
+
+			<small class="grey">{{ page.last_modified_at }}</small>
 		{% endif %}
 		{{ content }}
 		<p id="tilde" class="fw8 i f3">~</p>
@@ -23,4 +25,36 @@
 		</ul>
 		-->
 	</div>
+
+	{% if page.post %}
+		<!--<canvas id="garden-canvas" class="mt3 ma3 w-40 ba b--dashed b--black-10 h-100">
+
+    </canvas>-->
+
+		<script src="https://unpkg.com/random-access-memory@3.1.1/index.js"></script>
+		<script src="https://unpkg.com/discovery-swarm@5.1.4/index.js"></script>
+		<script src="https://unpkg.com/hypermerge@0.4.0/index.js"></script>
+		<script src="https://unpkg.com/dat-swarm-defaults@1.0.2/index.js"></script>
+
+		<!--<script src="https://unpkg.com/automerge@0.10.0/dist/automerge.js"></script>-->
+		<script src="../automerge.js"></script>
+		<script>
+			// var Automerge = require('automerge');
+
+			var config = defaults({
+				stream: function () {
+					return drive.createPeerStream():
+				}
+			}):
+			var swarm = Swarm(config);
+			swarm.join('agbero.dev');
+
+			var doc = Automerge.init();
+
+			var doc = Automerge.change(doc, "initialize doc", function(doc) {
+				doc.points = [];
+			})
+			// var gardenCanvas = new Canvas("garden-canvas");
+		</script>
+	{% endif %}
 </body>
