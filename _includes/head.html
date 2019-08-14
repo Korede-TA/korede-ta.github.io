@@ -6,16 +6,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="/tachyons.min.css">
+	<link rel="stylesheet" href="/other.css">
 	<link rel="icon" href="/2_jul_18_noalpha.gif">
 
 	<title>Is this Korede's website?</title>
 	<!--<script src="/color.js"></script>-->
 
+  <!-- <script src="https://unpkg.com/ipfs/dist/index.min.js"></script> -->
+  <script src="getEventListeners.js"></script>
+
 	<script>
+    var deconstructMode = true;
+		var globalColor;
 		(function() {
 			// window.addEventListener('mousemove', scrollWheelHandler);
 
-			var globalColor, canvas, ctx, img;
+			var canvas, ctx, img;
 
 			var canvasEngaged = false;
 
@@ -26,7 +32,9 @@
 				"tilde": function (color) { try { document.getElementById("tilde").style.color = color; } catch {} },
 				"picture": function (color) { try { document.getElementById("picture").style.backgroundColor = color; } catch {} },
 				"return": function (color) { try { document.getElementById("return").style.color = color; } catch {} },
-				"picture_canvas": function (color) { try { document.getElementById("picture_canvas").style.backgroundColor = color; } catch {} },
+        "picture_canvas": function (color) { 
+          try { document.getElementById("picture_canvas").style.backgroundColor = color; } catch {} 
+        },
 				/*
 					"links": function (color) { try { 
 						// console.log("changing link color");
@@ -131,7 +139,35 @@
 				tab.document.body.innerHTML = "<img src="+ url +">";
 			}
 
-			document.addEventListener("DOMContentLoaded", function(event) {
+      function setupElementDeconstruction(item) {
+        if (!deconstructMode) { return; }
+        var name = "deconstructed-"+item.id;
+
+        var deconstruction;
+        if (!!document.getElementById(name)) {
+          deconstruction = document.getElementById(name);
+          deconstruction.innerHTML = "";
+        } else {
+          deconstruction = document.createElement("P");
+          deconstruction.setAttribute("id", name);
+          deconstruction.classList.add("deconstruction");
+          var deconstructionsContainer = document.getElementById("deconstructions");
+          deconstructionsContainer.appendChild(deconstruction);
+        }
+        var listeners = item.getEventListeners();
+
+        var deconstructedText = "<b>" + name + "</b><br/>";
+        deconstructedText += item.outerHTML + "<br/>";
+        Object.keys(listeners).forEach(function (event) {
+          if (!!listeners[event][0].listener) { return; }
+          deconstructedText += (event + ":\n" + listeners[event][0].listener.toString());
+        });
+
+        deconstruction.innerHTML = deconstructedText;
+        deconstruction.hidden = true;
+      }
+
+      document.addEventListener("DOMContentLoaded", function(event) {
 				window.setInterval(colorChangeHandler, 10);
 
 				canvas = document.getElementById("picture_canvas");
@@ -142,11 +178,10 @@
 					canvas.style.cursor = "help";
 
 					img.onload = function() {
-						ctx.imaegSmoothingQuality = "low";
+						ctx.imageSmoothingQuality = "low";
 						ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 					}
 					img.src = "./no_eyes_2_jul_18_noalpha.png";
-
 
 					canvas.addEventListener("mousedown", initDraw, false);
 					canvas.addEventListener("touchstart", wrapTouchEvent(initDraw), false);
@@ -160,8 +195,67 @@
 
 					canvas.addEventListener("dblclick", openDrawingInNewTab);
 				}
+
+        document.addEventListener('mouseover', function(ev){
+          if (!ev.target.classList.contains("deconstructable")) { return; }
+          var name = "deconstructed-"+ev.target.id;
+          var elem = document.getElementById(name);
+          if (!elem) { return; }
+          elem.hidden = false;
+          elem.style.transform = 'translateY('+(ev.clientY-80)+'px)';
+          elem.style.transform += 'translateX('+(ev.clientX-100)+'px)';
+        }, false);
+
+        document.addEventListener('mouseout', function(ev){
+          if (!ev.target.classList.contains("deconstructable")) { return; }
+          var name = "deconstructed-"+ev.target.id;
+          var elem = document.getElementById(name);
+          if (!elem) { return; }
+          elem.hidden = true;
+        }, false);
+
+        document.body.addEventListener("keypress", function (e) {
+          if (e.ctrlKey && e.altKey && e.shiftKey && (e.code == "KeyD")) {
+            deconstructMode = !deconstructMode;
+            console.log("toggling deconstuctMode:", deconstructMode ? "ON" : "OFF");
+            var sign = document.getElementById("deconstruct-mode-sign");
+            if (!!sign) { sign.hidden = !deconstructMode; }
+          }
+        });
+
+        document.querySelectorAll(".deconstructable").forEach(setupElementDeconstruction);
 			});
+
+      var windows = 0;
+      function openWindow(e) {
+        e.preventDefault();
+        var link = e.target.href;
+        var iframe = document.createElement("IFRAME");
+        iframe.addClass
+      }
+
+			window.addEventListener('beforeunload', function(event) {
+				// upload to ipfs
+			}, false);
 
 		})();
 	</script>
+
+	<script src="https://bundle.run/dat-js@8"></script>
+
+  <script>
+    var Dat = window.datJS;
+    
+    /*
+    var dat = new Dat();
+    var archive = dat.get('dat://SOME_ARCHIVE_URL');
+
+    archive.readFile('hello.txt', function (err, data) {
+      console.log(data);
+    });
+
+    var readStream = archive.createReadStream('hello.txt');
+    readStream.on('data', console.log);
+    */
+  </script>
 </head>

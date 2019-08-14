@@ -1,0 +1,67 @@
+<head>
+
+<link rel="stylesheet" href="/tachyons.min.css">
+
+<script>
+  function newFrame(link) {
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  window.location = link;
+  }
+
+    // check if page in iframe
+    if (window.location !== window.parent.location) {
+      // call newframe on parent frame
+      top.newFrame(link);
+      document.body.style.wordWrap = "normal";
+      document.body.style.overflowY = "scroll";
+      document.body.style.overflowX = "hidden";
+      return;
+    } else {
+      document.body.style.whiteSpace = "nowrap";
+    }
+
+    var div = document.createElement("DIV");
+    div.className = "{{site.frame_class}}";
+    var iframe = document.createElement("IFRAME");
+    iframe.setAttribute("src", link);
+    iframe.setAttribute("frameBorder", "1");
+    iframe.setAttribute("height", "100%");
+    iframe.setAttribute("width", "100%");
+    div.appendChild(iframe);
+    document.body.appendChild(div);
+    div.scrollIntoView();
+  }
+
+</script>
+
+<style>
+  body {
+    overflow-x: auto;
+    width: auto;
+  }
+  
+  #scroll-wrapper {
+    display: table-row;
+  }
+  
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+  .frame {
+    width: 600px;
+    display: inline-block;
+    vertical-align: top;
+    overflow-x: hidden;
+    animation: 0.2s ease-out 0s 1 slideIn;
+  }
+</style>
+
+</head>
+
+{{content}}

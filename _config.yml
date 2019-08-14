@@ -1,4 +1,5 @@
 url: https://agbero.dev
+frame_class: "frame mw6 pa2 h-100"
 defaults:
   - scope:
       path: "assets/img"

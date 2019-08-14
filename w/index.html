@@ -1,0 +1,37 @@
+---
+title: Korede's Website
+post: true
+layout: frames
+---
+
+<div class="{{site.frame_class}}">
+
+<h2>wiki</h2>
+<h3>sections</h3>
+
+{% assign folders = site.pages | where_exp:"item", "item.path contains 'w'" %}
+{% assign wikifolders = "" | split:"" %}
+
+{% for folder in folders %}
+  {% assign tempvar = folder.path | split:"/" %}
+  {% assign wikifolders = wikifolders | push:tempvar[1] %}
+{% endfor %}
+
+{% assign wikifolders = wikifolders | uniq | sort %}
+
+<div class="w-100 cf">
+{% for folder in wikifolders %}
+  {% unless folder contains 'md' or folder contains 'html' %}
+    <a class="link" href="/w/{{folder}}/">{{folder}}/</a>
+  {% endunless %}
+{% endfor %}
+</div>
+
+<h3>all notes</h3>
+
+{% assign folder1 = site.pages | where_exp: "item" , "item.path contains 'w'" | sort:"path" %}
+{% for item in folder1 %}
+	<p><a href="#" onclick="newFrame('{{ item.url }}')" class="link dim bb">{{item.path}}</a></p>
+{% endfor %}
+
+</div>
