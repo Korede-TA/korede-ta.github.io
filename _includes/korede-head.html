@@ -1,12 +1,14 @@
 <head>
 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="/tachyons.min.css">
 
 <script>
   function newFrame(link) {
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-  window.location = link;
-  }
+      window.location = link;
+    }
 
     // check if page in iframej
     if (window.location !== window.parent.location) {

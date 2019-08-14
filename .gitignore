@@ -3,3 +3,4 @@ _site/
 **/.*.swp
 __ignore/
 **/__staging/
+node_modules/
