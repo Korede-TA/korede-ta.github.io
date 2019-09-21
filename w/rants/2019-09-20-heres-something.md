@@ -24,8 +24,8 @@ of experiences is.
 it's a struggle sometimes, to constantly feel at the mercy of forces that dictate what things are real and what things are not. it's even more of a struggle to feel that the reality of 
 an experience might fade away as time passes, or the gravity of a past situation might only be realized after it's too late. 
 
-it would potentially be convenient if we could ignore the unreal and just focus on the real, fish out the false and be inspired by the truth, or spared from the plain dumb stuff and enlightened by the truths
-of life. but there seems to be a reason for this struggle that, this struggle that somehow shows up in every single bit of life.
+it would be convenient to ignore the unreal and just focus on the real, fish out the false and be inspired by the truth, or spared from the plain dumb stuff and enlightened by the profound 
+things in life. but there seems to be a reason for this struggle, this struggle that somehow shows up in every single bit of life.
 
 subjectivism tells us to create our own truth, reality and meaning in life. realism tells us to ignore this struggle and take life with stride. the question of which choice is which
 in a particular scenario, is a hard one.

@@ -33,7 +33,7 @@ in a perpetual "drafts" state
 <br/>
 
 {% assign folder1 = site.pages | where_exp: "item" , "item.path contains 'w'" | sort:"path" %}
-{% for item in folder1 %}
+{% for item in folder1 reversed %}
 	<p><a href="#" onclick="newFrame('{{ item.url }}')" class="link dim bb">{{item.path}}</a></p>
 {% endfor %}
 
