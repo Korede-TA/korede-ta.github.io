@@ -1,7 +1,7 @@
 <head>
 
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="/tachyons.min.css">
 <link rel="icon" type="image/gif" href="/twit_pic_apr_18_gif.gif">
@@ -35,6 +35,16 @@
     document.body.appendChild(div);
     div.scrollIntoView();
   }
+  
+  window.addEventListener("pageshow", function ( event ) {
+  var historyTraversal = event.persisted || 
+                         ( typeof window.performance != "undefined" && 
+                              window.performance.navigation.type === 2 );
+  if ( historyTraversal ) {
+    // Handle page restore.
+    window.location.reload();
+  }
+});
 
 </script>
 
