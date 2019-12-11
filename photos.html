@@ -1,18 +1,22 @@
 ---
-layout: default
+layout: frames
 title: Korede's Photos
 permalink: /photos/
 ---
 
-Here's some photos, taken mainly on my iPhone and culled from my <a class="link" href="https://instagram.com/korede_aderele">instagram</a> story archives
+<div class="{{site.frame_class}}">
+
+Here's some photos, taken mainly on my iPhone and culled from my <a class="link" href="https://instagram.com/koredesphotos">instagram</a> story archives
 
 <ul class="list">
-	{% assign image_files = site.static_files | where: "image", true %}
-	{% for myimage in image_files %}
-		<li>
-			<img src="{{ myimage.path }}" width="550"/>
-		</li>
-		<br/>
-		
-	{% endfor %}
+  {% assign image_files = site.static_files | where: "image", true %}
+  {% for myimage in image_files %}
+    <li>
+      <img src="{{ myimage.path }}" width="550"/>
+    </li>
+    <br/>
+    
+  {% endfor %}
 </ul>
+
+</div>
