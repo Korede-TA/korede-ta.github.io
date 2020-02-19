@@ -4,6 +4,16 @@ permalink: /-korede
 layout: frames
 ---
 
+<style>
+.hiddenlink {
+  display: none;
+}
+
+a:hover + .hiddenlink {
+  display: block;
+}
+</style>
+
 <div class="{{site.frame_class}}">
 
 email: korede [at] drexel.edu
@@ -17,9 +27,15 @@ on <a href="https://twitter.com/korede_ta" target="_blank">twitter</a>,
   <a href="https://linkedin.com/in/koredeaderele" target="_blank">linkedin</a>
 <br/>
 
-<a href="#" onclick="newFrame('/w')">some writing
+some <a href="#" onclick="newFrame('/w')">writing</a> <br/>
+&emsp; and <a href="#" onclick="newFrame('/photos')">photos </a>
+&emsp; and <a href="#" onclick="newFrame('/recipes')" class="hidden-link">a recipe</a>
 <br/>
 <br/>
+
+<marquee direction="left" width="250" height="200" scrolldelay="60000">
+  <p>you can still <a href="/face">play</a> with my face</p>
+</marquee>
 
 <a href="/">index</a>
 
