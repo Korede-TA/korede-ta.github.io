@@ -1,6 +1,6 @@
 ---
 title: face
-permalink: /face
+permalink: /things/face
 ---
 
 <head>
@@ -11,6 +11,8 @@ permalink: /face
   <link rel="stylesheet" href="/tachyons.min.css">
   <script>
     (function() {
+			// window.addEventListener('mousemove', scrollWheelHandler);
+
 			var canvas, ctx, img;
 
 			var canvasEngaged = false;
@@ -25,16 +27,26 @@ permalink: /face
         "picture_canvas": function (color) { 
           try { document.getElementById("picture_canvas").style.backgroundColor = color; } catch {} 
         },
+				/*
+					"links": function (color) { try { 
+						// console.log("changing link color");
+						var els = document.getElementsByClassName("link");
+						for (var i=0; i<els.length; i++) {
+							els[i].style.color = color; 
+						}
+					} catch {} },
+				*/
 			};
 
 			function colorChangeHandler() {
 				offset = (offset > 360) ? 0 : offset + 1 ;
-				var color = "hsl("+offset.toString()+", 50%, 50%)";
+				var color = "hsl("+offset.toString()+", 50%, 50%)";// alert(color);
 				globalColor = color;
 				var elems = Object.keys(coloredElemFuncs)
 				for (var i=0; i<elems.length; i++) {
 					coloredElemFuncs[elems[i]](color);
 				}
+				// document.getElementsByClassName("link").map(function(link) { link.style.color = color; })
 			}	
 
 			function loadScript(url) {
@@ -57,6 +69,11 @@ permalink: /face
 						canvas.width  += 40;
 						canvas.height += 40;
 						ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+						/* TODO: figure out why shaking animation doesn't work here
+							canvas.style.animation = "shake 0.2s";
+							canvas.style.WebkitAnimation = "shake 0.2s";
+							canvas.style.animationIterationCount = "infinite";
+						*/
 
 						if (++intervalCallCount === 10) {
 							window.clearInterval(interval);
@@ -71,7 +88,6 @@ permalink: /face
 				if (canvasEngaged === false) { return; } // if canvas hasn't been engaged, ignore event
 				// draw path
 				if (mouseClicked === false) { return ;} 
-
 			
 				ctx.beginPath(); // begin
 				ctx.lineWidth = 5;
@@ -103,6 +119,34 @@ permalink: /face
 				tab.document.body.innerHTML = "<img src="+ url +">";
 			}
 
+      function setupElementDeconstruction(item) {
+        if (!deconstructMode) { return; }
+        var name = "deconstructed-"+item.id;
+
+        var deconstruction;
+        if (!!document.getElementById(name)) {
+          deconstruction = document.getElementById(name);
+          deconstruction.innerHTML = "";
+        } else {
+          deconstruction = document.createElement("P");
+          deconstruction.setAttribute("id", name);
+          deconstruction.classList.add("deconstruction");
+          var deconstructionsContainer = document.getElementById("deconstructions");
+          deconstructionsContainer.appendChild(deconstruction);
+        }
+        var listeners = item.getEventListeners();
+
+        var deconstructedText = "<b>" + name + "</b><br/>";
+        deconstructedText += item.outerHTML + "<br/>";
+        Object.keys(listeners).forEach(function (event) {
+          if (!!listeners[event][0].listener) { return; }
+          deconstructedText += (event + ":\n" + listeners[event][0].listener.toString());
+        });
+
+        deconstruction.innerHTML = deconstructedText;
+        deconstruction.hidden = true;
+      }
+
       document.addEventListener("DOMContentLoaded", function(event) {
 				window.setInterval(colorChangeHandler, 10);
 
@@ -117,7 +161,7 @@ permalink: /face
 						ctx.imageSmoothingQuality = "low";
 						ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 					}
-					img.src = "./no_eyes_2_jul_18_noalpha.png";
+					img.src = "../no_eyes_2_jul_18_noalpha.png";
 
 					canvas.addEventListener("mousedown", initDraw, false);
 					canvas.addEventListener("touchstart", wrapTouchEvent(initDraw), false);
@@ -131,7 +175,35 @@ permalink: /face
 
 					canvas.addEventListener("dblclick", openDrawingInNewTab);
 				}
+
+        document.addEventListener('mouseover', function(ev){
+          if (!ev.target.classList.contains("deconstructable")) { return; }
+          var name = "deconstructed-"+ev.target.id;
+          var elem = document.getElementById(name);
+          if (!elem) { return; }
+          elem.hidden = false;
+          elem.style.transform = 'translateY('+(ev.clientY-80)+'px)';
+          elem.style.transform += 'translateX('+(ev.clientX-100)+'px)';
+        }, false);
+
+        document.addEventListener('mouseout', function(ev){
+          if (!ev.target.classList.contains("deconstructable")) { return; }
+          var name = "deconstructed-"+ev.target.id;
+          var elem = document.getElementById(name);
+          if (!elem) { return; }
+          elem.hidden = true;
+        }, false);
+
+        document.body.addEventListener("keypress", function (e) {
+          if (e.ctrlKey && e.altKey && e.shiftKey && (e.code == "KeyD")) {
+            deconstructMode = !deconstructMode;
+            console.log("toggling deconstuctMode:", deconstructMode ? "ON" : "OFF");
+            var sign = document.getElementById("deconstruct-mode-sign");
+            if (!!sign) { sign.hidden = !deconstructMode; }
+          }
         });
+
+        document.querySelectorAll(".deconstructable").forEach(setupElementDeconstruction);
 			});
 
       var windows = 0;
@@ -141,11 +213,6 @@ permalink: /face
         var iframe = document.createElement("IFRAME");
         iframe.addClass
       }
-
-			window.addEventListener('beforeunload', function(event) {
-				// upload to ipfs
-			}, false);
-
 		})();
 </script>
 </head>
@@ -153,4 +220,8 @@ permalink: /face
 <body>
   <canvas id="picture_canvas" height="100" class="deconstructable">
   </canvas>
+
+  <br>
+  </br>
+  <p style="color:white;">you can draw on the face</p>
 </body>
