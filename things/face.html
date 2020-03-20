@@ -119,36 +119,9 @@ permalink: /things/face
 				tab.document.body.innerHTML = "<img src="+ url +">";
 			}
 
-      function setupElementDeconstruction(item) {
-        if (!deconstructMode) { return; }
-        var name = "deconstructed-"+item.id;
-
-        var deconstruction;
-        if (!!document.getElementById(name)) {
-          deconstruction = document.getElementById(name);
-          deconstruction.innerHTML = "";
-        } else {
-          deconstruction = document.createElement("P");
-          deconstruction.setAttribute("id", name);
-          deconstruction.classList.add("deconstruction");
-          var deconstructionsContainer = document.getElementById("deconstructions");
-          deconstructionsContainer.appendChild(deconstruction);
-        }
-        var listeners = item.getEventListeners();
-
-        var deconstructedText = "<b>" + name + "</b><br/>";
-        deconstructedText += item.outerHTML + "<br/>";
-        Object.keys(listeners).forEach(function (event) {
-          if (!!listeners[event][0].listener) { return; }
-          deconstructedText += (event + ":\n" + listeners[event][0].listener.toString());
-        });
-
-        deconstruction.innerHTML = deconstructedText;
-        deconstruction.hidden = true;
-      }
-
+      var gradientInterval = 10;
       document.addEventListener("DOMContentLoaded", function(event) {
-				window.setInterval(colorChangeHandler, 10);
+				window.setInterval(colorChangeHandler, gradientInterval);
 
 				canvas = document.getElementById("picture_canvas");
 				if (canvas) {
@@ -173,52 +146,28 @@ permalink: /things/face
 					canvas.addEventListener("mouseout", stopDraw, false);
 					canvas.addEventListener("touchend", wrapTouchEvent(stopDraw), false);
 
+          var lastScrollPos = 0; var scrollTick = false;
+          canvas.addEventListener("onscroll", function() {
+            lastScrollPos = window.offsetX;
+            // this bit kind of prevents the scroll events from firing excessively
+            if (!scrollTick) {
+              window.requestAnimationFrame(function() {
+                doSomething(lastScrollPos);
+                scrollTick = false;
+              });
+              scrollTick = true;
+            }
+          });
+
 					canvas.addEventListener("dblclick", openDrawingInNewTab);
 				}
-
-        document.addEventListener('mouseover', function(ev){
-          if (!ev.target.classList.contains("deconstructable")) { return; }
-          var name = "deconstructed-"+ev.target.id;
-          var elem = document.getElementById(name);
-          if (!elem) { return; }
-          elem.hidden = false;
-          elem.style.transform = 'translateY('+(ev.clientY-80)+'px)';
-          elem.style.transform += 'translateX('+(ev.clientX-100)+'px)';
-        }, false);
-
-        document.addEventListener('mouseout', function(ev){
-          if (!ev.target.classList.contains("deconstructable")) { return; }
-          var name = "deconstructed-"+ev.target.id;
-          var elem = document.getElementById(name);
-          if (!elem) { return; }
-          elem.hidden = true;
-        }, false);
-
-        document.body.addEventListener("keypress", function (e) {
-          if (e.ctrlKey && e.altKey && e.shiftKey && (e.code == "KeyD")) {
-            deconstructMode = !deconstructMode;
-            console.log("toggling deconstuctMode:", deconstructMode ? "ON" : "OFF");
-            var sign = document.getElementById("deconstruct-mode-sign");
-            if (!!sign) { sign.hidden = !deconstructMode; }
-          }
-        });
-
-        document.querySelectorAll(".deconstructable").forEach(setupElementDeconstruction);
 			});
-
-      var windows = 0;
-      function openWindow(e) {
-        e.preventDefault();
-        var link = e.target.href;
-        var iframe = document.createElement("IFRAME");
-        iframe.addClass
-      }
 		})();
 </script>
 </head>
 
 <body>
-  <canvas id="picture_canvas" height="100" class="deconstructable">
+  <canvas id="picture_canvas" height="100">
   </canvas>
 
   <br>
