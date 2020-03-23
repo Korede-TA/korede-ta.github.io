@@ -13,11 +13,16 @@ permalink: /things/gyroscope-experiment
     <script>
       let gyroscope = new Gyroscope({frequency: 60});
 
-      gyroscope.addEventListener('reading', e => {
+      gyroscope.addEventListener('reading', function(e) {
         document.getElementById("gyroscope.x").innerHTML = gyroscope.x;
         document.getElementById("gyroscope.y").innerHTML = gyroscope.y;
         document.getElementById("gyroscope.z").innerHTML = gyroscope.z;
       });
+
+      gyroscope.addEventListener('error', function() {
+        document.getElementById("error").innerHTML = "an error occured with the gyroscope API";
+      });
+
       gyroscope.start();
     </script>
   </head>
@@ -39,6 +44,10 @@ permalink: /things/gyroscope-experiment
       Angular velocity along the Z-axis:
       <b id="gyroscope.z"></b>
     <div>
+    <br/>
+
+    <div id="error" class="red">
+    </div>
     <br/>
     <br/>
 
