@@ -11,38 +11,37 @@ permalink: /things/gyroscope-experiment
   <link rel="stylesheet" href="/tachyons.min.css">
   <head>
     <script>
-      let gyroscope = new Gyroscope({frequency: 60});
-
-      gyroscope.addEventListener('reading', function(e) {
-        document.getElementById("gyroscope.x").innerHTML = gyroscope.x;
-        document.getElementById("gyroscope.y").innerHTML = gyroscope.y;
-        document.getElementById("gyroscope.z").innerHTML = gyroscope.z;
-      });
-
-      gyroscope.addEventListener('error', function() {
-        document.getElementById("error").innerHTML = "an error occured with the gyroscope API";
-      });
-
-      gyroscope.start();
+      window.addEventListener('devicemotion', function(e) {
+        document.getElementById("acceleration").innerHTML = e.acceleration;
+        document.getElementById("accelerationIncludingGravity").innerHTML = e.accelerationIncludingGravity;
+        document.getElementById("rotationRate").innerHTML = e.rotationRate;
+        document.getElementById("interval").innerHTML = e.interval;
+      })
     </script>
   </head>
 
   <body class="sans-serif pa2">
     <div>
-      Angular velocity along the X-axis:
-      <b id="gyroscope.x"></b>
+      acceleration
+      <b id="acceleration"></b>
     <div>
     <br/>
 
     <div>
-      Angular velocity along the Y-axis:
-      <b id="gyroscope.y"></b>
+      acceleration including gravity
+      <b id="accelerationIncludingGravity"></b>
     <div>
     <br/>
 
     <div>
-      Angular velocity along the Z-axis:
-      <b id="gyroscope.z"></b>
+      rotation rate
+      <b id="rotationRate"></b>
+    <div>
+    <br/>
+
+    <div>
+      interval
+      <b id="interval"></b>
     <div>
     <br/>
 
