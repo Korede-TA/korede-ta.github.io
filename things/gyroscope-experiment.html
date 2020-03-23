@@ -12,6 +12,7 @@ permalink: /things/gyroscope-experiment
   <head>
     <script>
       window.addEventListener('devicemotion', function(e) {
+        console.log("event dump: \n" + JSON.stringify(e));
         document.getElementById("acceleration").innerHTML = e.acceleration;
         document.getElementById("accelerationIncludingGravity").innerHTML = e.accelerationIncludingGravity;
         document.getElementById("rotationRate").innerHTML = e.rotationRate;
