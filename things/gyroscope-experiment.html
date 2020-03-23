@@ -1,5 +1,5 @@
 ---
-title: gyroscope experiment
+title: accelerometer experiment
 permalink: /things/gyroscope-experiment
 ---
 
@@ -18,10 +18,44 @@ permalink: /things/gyroscope-experiment
         document.getElementById("rotationRate").innerHTML = e.rotationRate;
         document.getElementById("interval").innerHTML = e.interval;
       })
+
+      let accelerometer = new Accelerometer({frequency: 60});
+
+      accelerometer.addEventListener('reading', function(e) {
+        document.getElementById("accelerometer.x").innerHTML = e.acceleration.x;
+        document.getElementById("accelerometer.y").innerHTML = e.acceleration.y;
+        document.getElementById("accelerometer.z").innerHTML = e.acceleration.z;
+      });
+
+      accelerometer.addEventListener('error', function() {
+        document.getElementById("error").innerHTML = "an error occured with the accelerometer API";
+      });
+
+      accelerometer.start();
     </script>
   </head>
 
   <body class="sans-serif pa2">
+    <h3>accelerometer api</h3>
+    <div>
+      Acceleration along the X-axis:
+      <b id="accelerometer.x"></b>
+    <div>
+    <br/>
+
+    <div>
+      Acceleration along the Y-axis:
+      <b id="accelerometer.y"></b>
+    <div>
+    <br/>
+
+    <div>
+      Acceleration along the Z-axis:
+      <b id="accelerometer.z"></b>
+    <div>
+    <br/>
+
+    <h3>devicemotion api</h3>
     <div>
       acceleration
       <b id="acceleration"></b>
