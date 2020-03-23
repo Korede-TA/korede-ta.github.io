@@ -1,0 +1,47 @@
+---
+title: gyroscope experiment
+permalink: /things/gyroscope-experiment
+---
+
+<html>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/tachyons.min.css">
+  <head>
+    <script>
+      let gyroscope = new Gyroscope({frequency: 60});
+
+      gyroscope.addEventListener('reading', e => {
+        document.getElementById("gyroscope.x").innerHTML = gyroscope.x;
+        document.getElementById("gyroscope.y").innerHTML = gyroscope.y;
+        document.getElementById("gyroscope.z").innerHTML = gyroscope.z;
+      });
+      gyroscope.start();
+    </script>
+  </head>
+
+  <body class="sans-serif pa2">
+    <div>
+      Angular velocity along the X-axis:
+      <b id="gyroscope.x"></b>
+    <div>
+    <br/>
+
+    <div>
+      Angular velocity along the Y-axis:
+      <b id="gyroscope.y"></b>
+    <div>
+    <br/>
+
+    <div>
+      Angular velocity along the Z-axis:
+      <b id="gyroscope.z"></b>
+    <div>
+    <br/>
+    <br/>
+
+    <em>this is best tried out on mobile</em>
+  </body>
+</html>
