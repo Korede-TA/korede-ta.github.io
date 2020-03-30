@@ -1,0 +1,58 @@
+---
+title: spheres (p5)
+permalink: /things/spheres
+---
+
+<html>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/tachyons.min.css">
+  <head>
+    <script src="/color.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script>
+
+      class Sphere {
+        constructor(initColor, radius, axis_radius) {
+          this.initialColor = initColor;
+          this.radius = radius;
+        }
+
+        createSphere() {
+          fill(this.initialColor);
+          sphere(this.radius);
+        }
+
+        setPos(xPos, yPos) {
+          this.xPos = xPos;
+          this.yPos = yPos;
+        }
+      }
+
+      function setup() {
+        createCanvas(1000, 1000, WEBGL);
+      }
+
+      // let color = globalColor;
+      let s = new Sphere("white", 70, 100);
+
+      function draw() {
+        background(255);
+        
+        // these two lines rotate around in a circle
+        translate(width / 2, height / 2);
+        translate(p5.Vector.fromAngle(millis() / 1000, 40));
+
+        if (mouseIsPressed) {
+          s.createSphere();
+          s.setPos(mouseX, mouseY);
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+  </body>
+</html>
