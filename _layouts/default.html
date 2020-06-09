@@ -1,60 +1,81 @@
-{% include head.html %}
+<!DOCTYPE html>
+<html lang="en">
 
-<body class="content bg-white near-black flex flex-row">
-	<div class="sans-serif ma3 ma6-ns mt6 mw7 fl w-60-l w-100-ns">
-		{% if page.post %}
-			{% include home_anchor.html %}
+<head>
+	<meta charset="utf-8">
+	<meta content="ie=edge" http-equiv="x-ua-compatible">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
 
-			<small class="grey">{{ page.last_modified_at }}</small>
-		{% endif %}
-		{{ content }}
-		<p id="tilde" class="fw8 i f3">~</p>
+	<title>agbero.dev – Korede Aderele</title>
+	<meta name="title" content="agbero.dev – Korede Aderele">
+	<meta name="description" content="Lagos-born Philly-based Software Engineer">
 
-		<!--<a class="log_link" href="https://www.notion.so/log-drafts-bbd9fba375e042ffba0d18ab195b4467">
-			<h4>Log</h4>
-		</a>-->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://agbero.dev/">
+	<meta property="og:title" content="agbero.dev - Korede Aderele">
+	<meta property="og:description" content="Lagos-born Philly-based Software Engineer">
+	<meta property="og:image" content="https://agbero.dev/slack_profile.png">
 
-		<!-- <h4>Rants</h4>
-		<ul class="list">
-			{% for post in site.posts %}
-				<li>
-					<a href="{{ post.url }}"> {{ post.title }} </a>
-				</li>
-				<br/>
-			{% endfor %}
-		</ul>
-		-->
-	</div>
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="https://agbero.dev/">
+	<meta property="twitter:title" content="agbero.dev - Korede Aderele">
+	<meta property="twitter:description" content="Lagos-born Philly-based Software Engineer">
+	<meta property="twitter:image" content="https://agbero.dev/slack_profile.png">
 
-	{% if page.post %}
-		<!--<canvas id="garden-canvas" class="mt3 ma3 w-40 ba b--dashed b--black-10 h-100">
+	<link rel="stylesheet" href="/tachyons.min.css">
+	<link rel="stylesheet" href="/other.css">
+	<link rel="icon" href="/2_jul_18_noalpha.gif">
 
-    </canvas>-->
+  <style>
+    .main {
+      display: grid;
+      margin: 0;
+      padding: 1em;
+      grid-gap: 20px;
+      grid-template-areas:
+        "intro      b       a"
+        "about   center     a"
+        "about   center     a";
+    }
 
-		<script src="https://unpkg.com/random-access-memory@3.1.1/index.js"></script>
-		<script src="https://unpkg.com/discovery-swarm@5.1.4/index.js"></script>
-		<script src="https://unpkg.com/hypermerge@0.4.0/index.js"></script>
-		<script src="https://unpkg.com/dat-swarm-defaults@1.0.2/index.js"></script>
+    .intro { grid-area: intro; }
+    .about { grid-area: about; }
+    .center { grid-area: center; }
 
-		<!--<script src="https://unpkg.com/automerge@0.10.0/dist/automerge.js"></script>-->
-		<script src="../automerge.js"></script>
-		<script>
-			// var Automerge = require('automerge');
+    a {
+      text-decoration: none;
+      font-weight: bold;
+      color: white;
+    }
 
-			var config = defaults({
-				stream: function () {
-					return drive.createPeerStream():
-				}
-			}):
-			var swarm = Swarm(config);
-			swarm.join('agbero.dev');
+    a:hover {
+      opacity: 0.7;
+    }
+  </style>
+</head>
 
-			var doc = Automerge.init();
+<body class="content bg-black-90 near-white sans-serif pa3">
+  <div class="main">
+    <div class="intro">
+      <p>
+        Korede Aderele <br/>
+        korede [at] drexel.edu <br/>
+      </p>
 
-			var doc = Automerge.change(doc, "initialize doc", function(doc) {
-				doc.points = [];
-			})
-			// var gardenCanvas = new Canvas("garden-canvas");
-		</script>
-	{% endif %}
+      <p>
+        <a href="/w">writing</a> and <a href="/photos">photos </a>
+      </p>
+
+      <p>
+        <a href="https://twitter.com/korede_ta" target="_blank">twitter</a> <br/>
+        <a href="https://are.na/korede-aderele">are.na</a><br/>
+        <a href="https://github.com/korede-ta" target="_blank">github</a><br/>
+        <a href="https://open.spotify.com/user/korede_ta" target="_blank">spotify</a><br/>
+        <a href="https://linkedin.com/in/koredeaderele" target="_blank">linkedin</a><br/>
+      </p>
+    </div>
+
+    {{ content }}
+  </div>
+
 </body>

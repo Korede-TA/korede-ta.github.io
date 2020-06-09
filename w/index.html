@@ -1,40 +1,49 @@
 ---
 title: Korede's Website
-post: true
-layout: frames
+layout: default
 ---
 
-<div class="{{site.frame_class}}">
+<div class="center">
 
-<h2>wiki</h2>
-<h3>sections</h3>
+  <h2>wiki</h2>
 
-{% assign folders = site.pages | where_exp:"item", "item.path contains 'w'" %}
-{% assign wikifolders = "" | split:"" %}
+  <!--
+  <h3>sections</h3>
 
-{% for folder in folders %}
-  {% assign tempvar = folder.path | split:"/" %}
-  {% assign wikifolders = wikifolders | push:tempvar[1] %}
-{% endfor %}
+  {% assign folders = site.pages | where_exp:"item", "item.path contains 'w'" %}
+  {% assign wikifolders = "" | split:"" %}
 
-{% assign wikifolders = wikifolders | uniq | sort %}
+  {% for folder in folders %}
+    {% assign tempvar = folder.path | split:"/" %}
+    {% assign wikifolders = wikifolders | push:tempvar[1] %}
+  {% endfor %}
 
-<div class="w-100 cf">
-{% for folder in wikifolders %}
-  {% unless folder contains 'md' or folder contains 'html' %}
-    <a class="link" href="/w/{{folder}}/">{{folder}}/</a>
-  {% endunless %}
-{% endfor %}
-</div>
+  {% assign wikifolders = wikifolders | uniq | sort %}
 
-<h3>all notes</h3>
+  <div class="w-100 cf">
+  {% for folder in wikifolders %}
+    {% unless folder contains 'md' or folder contains 'html' %}
+      <a class="link" href="/w/{{folder}}/">{{folder}}/</a>
+    {% endunless %}
+  {% endfor %}
+  </div>
+  -->
 
-in a perpetual "drafts" state
-<br/>
+  <br/>
 
-{% assign folder1 = site.pages | where_exp: "item" , "item.path contains 'w'" | sort:"path" %}
-{% for item in folder1 reversed %}
-	<p><a href="#" onclick="newFrame('{{ item.url }}')" class="link dim bb">{{item.path}}</a></p>
-{% endfor %}
+  {% assign folder1 = site.pages | where_exp: "item" , "item.path contains 'w'" | sort:"path" %}
+  {% for item in folder1 reversed %}
+    {% assign post_title = item.url | slice: 20,100 | remove: ".html" | split: "-" | join: " " %}
+    {% if post_title != "" %}
+    <p>
+      <a href="{{ item.url }}" class="">
+        {{ post_title }}
+      </a> 
+      <sub>
+        {{ item.url | slice: 9,10 | remove: ".html" }}
+      </sub> 
+    </p>
+    {% endif %}
+  {% endfor %}
 
 </div>
