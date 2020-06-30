@@ -1,0 +1,90 @@
+---
+title: accelerometer experiment
+permalink: /things/gyroscope-experiment
+---
+
+<html>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/tachyons.min.css">
+  <head>
+    <script>
+      window.addEventListener('devicemotion', function(e) {
+        console.log("event dump: \n" + JSON.stringify(e));
+        document.getElementById("acceleration").innerHTML = e.acceleration;
+        document.getElementById("accelerationIncludingGravity").innerHTML = e.accelerationIncludingGravity;
+        document.getElementById("rotationRate").innerHTML = e.rotationRate;
+        document.getElementById("interval").innerHTML = e.interval;
+      })
+
+      let accelerometer = new Accelerometer({frequency: 60});
+
+      accelerometer.addEventListener('reading', function(e) {
+        document.getElementById("accelerometer.x").innerHTML = e.acceleration.x;
+        document.getElementById("accelerometer.y").innerHTML = e.acceleration.y;
+        document.getElementById("accelerometer.z").innerHTML = e.acceleration.z;
+      });
+
+      accelerometer.addEventListener('error', function() {
+        document.getElementById("error").innerHTML = "an error occured with the accelerometer API";
+      });
+
+      accelerometer.start();
+    </script>
+  </head>
+
+  <body class="sans-serif pa2">
+    <h3>accelerometer api</h3>
+    <div>
+      acceleration along the x-axis:
+      <b id="accelerometer.x"></b>
+    <div>
+    <br/>
+
+    <div>
+      acceleration along the y-axis:
+      <b id="accelerometer.y"></b>
+    <div>
+    <br/>
+
+    <div>
+      acceleration along the z-axis:
+      <b id="accelerometer.z"></b>
+    <div>
+    <br/>
+
+    <h3>devicemotion api</h3>
+    <div>
+      acceleration:
+      <b id="acceleration"></b>
+    <div>
+    <br/>
+
+    <div>
+      acceleration including gravity:
+      <b id="accelerationIncludingGravity"></b>
+    <div>
+    <br/>
+
+    <div>
+      rotation rate:
+      <b id="rotationRate"></b>
+    <div>
+    <br/>
+
+    <div>
+      interval:
+      <b id="interval"></b>
+    <div>
+    <br/>
+
+    <div id="error" class="red">
+    </div>
+    <br/>
+    <br/>
+
+    <em>this is best tried out on mobile</em>
+  </body>
+</html>

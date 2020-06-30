@@ -4,3 +4,8 @@ _site/
 __ignore/
 **/__staging/
 node_modules/
+.jekyll-cache/
+.ruby-version
+vendor/
+package-lock.json
+Gemfile*

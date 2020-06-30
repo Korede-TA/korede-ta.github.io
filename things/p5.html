@@ -1,0 +1,32 @@
+---
+title: p5 practice
+permalink: /things/p5
+---
+
+<html>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/tachyons.min.css">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+    <script>
+      function setup() {
+        createCanvas(640, 480);
+      }
+
+      function draw() {
+        if (mouseIsPressed) {
+          fill(0);
+        } else {
+          fill(255);
+        }
+        ellipse(mouseX, mouseY, 80, 80);
+      }
+    </script>
+  </head>
+
+  <body>
+  </body>
+</html>

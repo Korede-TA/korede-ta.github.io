@@ -1,0 +1,158 @@
+---
+title: draw a poem
+permalink: /things/draw_a_poem
+---
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="/tachyons.min.css">
+  <script>
+    var canvas, ctx, img;
+    var offset = Math.floor(Math.random() * Math.floor(360)); 
+    var mouseClicked = false;
+    var pos = {x: 0, y: 0}; var oldPos = {x: 0, y: 0}; function setPos(e) { oldPos = pos; pos.x = e.clientX-canvas.offsetLeft; pos.y = e.clientY-canvas.offsetTop };
+
+    var fontSize = "20px"; var fontFamily = "Arial";
+
+    var brushText = ""; var brushTextCursor = 0;
+
+    const pathMode = {
+      drawRate: 5,
+      drawRateTicks: 0,
+
+      path: [],
+
+      initDraw: function (e) {
+        canvas.style.cursor = "text";
+        mouseClicked = true;
+      },
+
+      onDraw: function (e) {
+        if (this.drawRateTicks < this.drawRate) { this.drawRateTicks++; return; }
+        this.drawRateTicks = 0;
+        if (mouseClicked === false) { return ;} 
+      
+        ctx.beginPath(); // begin
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "white";
+        ctx.moveTo(pos.x, pos.y); // from
+        setPos(e);
+        ctx.lineTo(pos.x, pos.y); // to
+        ctx.stroke();
+        pathMode.path.push([pos.x, pos.y]);
+        // ctx.endPath();
+      },
+
+      stopDraw: function (e) {
+        mouseClicked = false;
+        var charFreq = Math.floor(pathMode.path.length / brushText.length);
+        brushTextCursor = 0;
+        ctx.font = [fontSize, fontFamily].join(" ");
+        ctx.strokeStyle = "black";
+        for (var i = 0; i < pathMode.path.length; i += charFreq) {
+          if (brushTextCursor >= brushText.length) break;
+          ctx.strokeText(brushText[brushTextCursor], pathMode.path[i][0], pathMode.path[i][1]);
+          brushTextCursor++; 
+        }
+        pathMode.path = [];
+      },
+    };
+
+    const instantMode = {
+      drawRate: 5,
+      drawRateTicks: 0,
+
+      initDraw: function (e) {
+        canvas.style.cursor = "text";
+        mouseClicked = true;
+      },
+
+      onDraw: function (e) {
+        if (this.drawRateTicks < this.drawRate) { this.drawRateTicks++; return; }
+        this.drawRateTicks = 0;
+        if (mouseClicked === false) { return ;} 
+      
+        setPos(e);
+        ctx.font = [fontSize, fontFamily].join(" ");
+        ctx.strokeText(brushText[brushTextCursor], pos.x, pos.y);
+        brushTextCursor++; if (brushTextCursor == brushText.length) { brushTextCursor = 0 }
+      },
+
+      stopDraw: function (e) {
+        mouseClicked = false;
+      },
+    };
+
+    function wrapTouchEvent(f) {
+      return function(e) {
+        if (e.target == canvas) { e.preventDefault(); }
+        f(e);
+      };
+    }
+
+    function openDrawingInNewTab(e) {
+      var url = e.target.toDataURL();
+      var tab = window.open(); 
+      tab.document.body.innerHTML = "<img src="+ url +">";
+    }
+
+    document.addEventListener("DOMContentLoaded", function(e) {
+      // any keypresses should result in the brush input being focused
+      document.body.addEventListener("keypress", function(e) {
+        // console.log("")
+        document.getElementById("brush").focus();
+        // document.getElementById("brush").value = e.key;
+        // brushText = e.key;
+      });
+
+      document.getElementById("brush").addEventListener("input", function(e) {
+        brushText = !!e.target.value ? e.target.value : "";
+        brushTextCursor = 0;
+      });
+
+      canvas = document.getElementById("canvas");
+      if (canvas) {
+        ctx = canvas.getContext("2d");
+        canvas.width = 500;
+        canvas.height = 500;
+
+        canvas.addEventListener("mousedown", pathMode.initDraw, false);
+        canvas.addEventListener("touchstart", wrapTouchEvent(pathMode.initDraw), false);
+
+        canvas.addEventListener("mousemove", pathMode.onDraw, false);
+        canvas.addEventListener("touchmove", wrapTouchEvent(pathMode.onDraw), false);
+
+        canvas.addEventListener("mouseup", pathMode.stopDraw, false);
+        canvas.addEventListener("mouseout", pathMode.stopDraw, false);
+        canvas.addEventListener("touchend", wrapTouchEvent(pathMode.stopDraw), false);
+
+        var lastScrollPos = 0; var scrollTick = false;
+        canvas.addEventListener("onscroll", function() {
+          lastScrollPos = window.offsetX;
+          // this bit kind of prevents the scroll events from firing excessively
+          if (!scrollTick) {
+            window.requestAnimationFrame(function() {
+              doSomething(lastScrollPos);
+              scrollTick = false;
+            });
+            scrollTick = true;
+          }
+        });
+
+        canvas.addEventListener("dblclick", openDrawingInNewTab);
+      }
+    });
+</script>
+</head>
+
+<body class="sans-serif pa3">
+  <canvas id="canvas">
+  </canvas>
+
+  <p> </p>
+
+  <b>brush:</b><input id="brush"></input>
+</body>
