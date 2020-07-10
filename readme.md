@@ -4,7 +4,7 @@ my personal website
 
 scrappily put together with jekyll and modified heavily over time (last big update was: july 8 2020)
 
-the code is pretty disorganized but [`\_layouts/default.html`](https://github.com/Korede-TA/korede-ta.github.io/blob/master/_layouts/default.html) is a good starting point if you want to make modifications
+the code is pretty disorganized but [`_layouts/default.html`](https://github.com/Korede-TA/korede-ta.github.io/blob/master/_layouts/default.html) is a good starting point if you want to make modifications
 
 
 ## getting it to work on your own computer 🛠
@@ -31,7 +31,7 @@ it's a good idea to run the server in a separate terminal tab because you can ma
 
 i deploy my site using Github Pages. you can find some good guides to doing this for _free_ by searching ["github pages jekyll"](https://duckduckgo.com/?q=github+pages+jekyll) in your favorite search engine. 
 
-only other thing i did was by a domain name and point the domain name resolution service (DNS) to Github Pages. you could find instructions for this by searching for ["github pages custom domain"](https://duckduckgo.com/?q=github+pages+custom+domain).
+only other thing i did was buy a domain name and point the domain name resolution service (DNS) to Github Pages. you could find instructions for this by searching for ["github pages custom domain"](https://duckduckgo.com/?q=github+pages+custom+domain).
 
 
 ## feedback 🗣
