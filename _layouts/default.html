@@ -27,20 +27,38 @@
 	<link rel="icon" href="/2_jul_18_noalpha.gif">
 
   <style>
+    html { scroll-behavior: smooth; } 
+
     .main {
       display: grid;
       margin: 0;
       padding: 1em;
       grid-gap: 20px;
+      grid-template-columns: 300px 600px 40px;
       grid-template-areas:
         "intro      b       a"
         "about   center     a"
-        "about   center     a";
+        "about   center     a"
+        "bottom  bottom  bottom";
+    }
+
+    @media only screen and (max-width: 600px) {
+      .main {
+        grid-template-columns: 100%;
+        grid-template-areas:
+          "intro"
+          "center"
+          "center"
+          "about"
+          "about"
+          "bottom";
+      }
     }
 
     .intro { grid-area: intro; }
     .about { grid-area: about; }
     .center { grid-area: center; }
+    .bottom { grid-area: bottom; }
 
     a {
       text-decoration: none;
@@ -54,9 +72,11 @@
   </style>
 </head>
 
-<body class="content bg-black-90 near-white sans-serif pa3">
+<body class="content bg-black-90 near-white sans-serif">
   <div class="main">
-    <div class="intro">
+    <a id="#top">
+
+    <div class="intro b--dashed bw1 pa3">
       <p>
         Korede Aderele <br/>
         korede [at] drexel.edu <br/>
@@ -76,6 +96,10 @@
     </div>
 
     {{ content }}
+
+    <div class="bottom b--dotted bw1 pa3">
+      &copy; Korede Aderele 2020 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#top">Top</a>
+    </div>
   </div>
 
 </body>
