@@ -14,7 +14,7 @@ from os.path import isfile, join
 output_file = "_data/galleries/summer-19.yml"
 input_file = output_file
 image_path = "summer-19"
-extensions= ['jpg', 'heic']
+extensions= ['jpg', 'png']
 
 # set correct path
 path = join("./assets/photography/", image_path)

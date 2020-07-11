@@ -1,22 +1,39 @@
 ---
-layout: default 
+layout: gallery
 title: Korede's Photos
 permalink: /photos/
 ---
 
-<div class="{{site.frame_class}}">
+<script src="https://cdn.jsdelivr.net/npm/exif-js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"></script>
 
-Here's some photos, taken mainly on my iPhone and culled from my <a class="link" href="https://instagram.com/koredesphotos">instagram</a> story archives
+<div class="center pa3 b--dotted bw1">
 
-<ul class="list">
-  {% assign image_files = site.static_files | where: "image", true %}
-  {% for myimage in image_files %}
-    <li>
-      <img src="{{ myimage.path }}" width="550"/>
-    </li>
-    <br/>
-    
-  {% endfor %}
-</ul>
+  <h1 class="gallery-title">{{ page.title }}</h1>
+
+  <p>
+  </p>
+
+  <p>
+    I've loved photography since secondary school. I covered a lot of sports and social events as the "Media" Prefect at <a href="https://www.olashoreschool.com/">Olashore</a>, alongside a bunch of Audio Visual stuff like the weekly school news update and the school magazine Oasis.
+  </p>
+
+  <p>
+    I got my first DSLR in 2013 and learned a lot of technical stuff about photography as part of an elective "trade subject" i took. Having those skills helped a lot with the role and helped pique my interest in the Artform.
+  </p>
+
+  <p>
+    Doing it pretty dedicatedly in high school was a lot of work, and i was a lot less interested in doing it professionally by the time i'd started college, but i volunteered occasionally with student orgs since i had a camera.
+  </p>
+
+  <p>
+    Most of the photos posted here were taken on my iPhone. I have an original iPhone X which i got in 2018. It's been my primary driver for photoraphy since. I was planning to pick up my Canon Rebel T3 more devotedly at the start of 2019 but then it got stolen :(
+  </p>
+
+  <p>
+    I really enjoy iPhone photography, and i've tweeted about how the quirks of mobile phone camera's have contributed to certain photo aesthetics of the current era. Just like someone might look at a sepia photo and think of a certain time period (60s maybe?), someone might look at a grainy slightly-zoomed iPhone pic and think of the 2010s.
+  </p>
+
+  {% include gallery-layout.html gallery=site.data.galleries.summer-19%}
 
 </div>
