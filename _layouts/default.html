@@ -37,9 +37,9 @@
       grid-template-columns: 300px 600px 40px;
       grid-template-areas:
         "intro      b       a"
-        "about   center     a"
-        "about   center     a"
-        "bottom  bottom  bottom";
+        "about   center     misc"
+        "about   center     misc"
+        "bottom  c          c  ";
     }
 
     @media only screen and (max-width: 600px) {
@@ -51,6 +51,8 @@
           "center"
           "about"
           "about"
+          "misc"
+          "misc"
           "bottom";
       }
     }
@@ -59,6 +61,7 @@
     .about { grid-area: about; }
     .center { grid-area: center; }
     .bottom { grid-area: bottom; }
+    .misc { grid-area: misc; }
 
     a {
       text-decoration: none;
