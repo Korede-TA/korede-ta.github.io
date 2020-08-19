@@ -9,3 +9,4 @@ node_modules/
 vendor/
 package-lock.json
 Gemfile*
+.mypy_cache/
