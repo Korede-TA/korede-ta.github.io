@@ -97,6 +97,20 @@
     .main > div.social {
       line-height: 120%;
     }
+
+    ul {
+      list-style-type: none;
+    }
+
+    ul li:before {
+      content: '–';
+      position: absolute;
+      margin-left: -15px;
+    }
+
+    ul li {
+      margin-left: -15px;
+    }
 </style>
 </head>
 
@@ -135,19 +149,22 @@
     <div class="intro pa3 {% if page.url == "/" %} b--solid {% else %} b--dashed {% endif %}">
       <p class="normal">
         Korede Aderele <br/>
-        korede [at] drexel.edu <br/>
+        <span class="f6 gray">korede [at] drexel.edu</span> <br/>
       </p>
 
+      <p>
+        <a href="/about">about</a>
+      </p>
       <p>
         <a href="/w">writing</a> and <a href="/photos">photos </a>
       </p>
 
       <div class="social">
-        <a href="https://instagram.com/koredesphotos" target="_blank">instagram</a> <br/>
-        <a href="https://github.com/korede-ta" target="_blank">github</a><br/>
-        <a href="https://soundcloud.com/koredesbeats" target="_blank">soundcloud</a><br/>
-        <a href="https://linkedin.com/in/koredeaderele" target="_blank">linkedin</a><br/>
-        <a href="https://are.na/korede-aderele" target="_blank">are.na</a><br/>
+        <a href="https://instagram.com/koredesphotos" target="_blank">instagram</a>, 
+        <a href="https://github.com/korede-ta" target="_blank">github</a>, 
+        <a href="https://soundcloud.com/koredesbeats" target="_blank">soundcloud</a>,
+        <a href="https://linkedin.com/in/koredeaderele" target="_blank">linkedin</a> & 
+        <a href="https://are.na/korede-aderele" target="_blank">are.na</a>
       </div>
     </div>
 

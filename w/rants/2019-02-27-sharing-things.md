@@ -12,8 +12,9 @@ this feeling seems almost like a survival instanct in ways i don't have all the 
 
 i've tweeted in the past about how the internet/computers could be what helps us live forever. the internet presents something of a though-sensitive film onto which all that which flows through out minds can be impressed upon for all eternity.
 
----
+<div class="bb b--gray b--solid mh6">
+</div>
 
-i've also been thinking a lot about the idea of signaling, especially as it relates to finding community by exposing one's thought's and feelings. i haven't quite found the words to externalize my thoughts on this but there's a good [mat dryhurst interview](https://thecreativeindependent.com/people/philosopher-and-digital-artist-mat-dryhurst-on-redesigning-the-system/) that does a much better job than i could on this (screenshotted excerpt below)
+i've also been thinking a lot about the idea of signaling, especially as it relates to finding community by exposing one's thoughts and feelings. i haven't quite found the words to externalize my thoughts on this but there's a good [mat dryhurst interview](https://thecreativeindependent.com/people/philosopher-and-digital-artist-mat-dryhurst-on-redesigning-the-system/) that does a much better job than i could on this (screenshotted excerpt below)
 
 !["mat dryhurst interview screenshot"](dryhurst-interview.jpg)
