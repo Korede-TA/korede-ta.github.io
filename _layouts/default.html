@@ -36,10 +36,10 @@
       grid-gap: 20px;
       grid-template-columns: 300px 600px 40px;
       grid-template-areas:
-        "intro      b       a"
+        "intro   center     a"
         "about   center     misc"
         "about   center     misc"
-        "bottom  c          c  ";
+        "bottom  c          player";
     }
 
     @media only screen and (max-width: 600px) {
@@ -53,6 +53,7 @@
           "about"
           "misc"
           "misc"
+          "player"
           "bottom";
       }
     }
@@ -60,27 +61,79 @@
     .intro { grid-area: intro; }
     .about { grid-area: about; }
     .center { grid-area: center; }
-    .bottom { grid-area: bottom; }
     .misc { grid-area: misc; }
+    .player { 
+      grid-area: player; 
+      position: absolute; right: 10px; bottom: 10px;
+    }
+    .bottom { grid-area: bottom; }
 
+    a#top { border: none; }
     a {
       text-decoration: none;
-      font-weight: bold;
+      border-bottom-style: solid;
+      border-bottom-width: 0.3px;
+    }
+    a.button {
+      border-bottom-style: dashed;
+    }
+    .dark-mode a {
       color: white;
+      border-bottom-color: white;
+    }
+    .light-mode a {
+      color: #111;
+      border-bottom-color: #111;
     }
 
     a:hover {
       opacity: 0.7;
     }
-  </style>
+
+    div {
+      border-width: 0.5px;
+    }
+    
+    .main > div.social {
+      line-height: 120%;
+    }
+</style>
 </head>
+
+<script>
+    function setMode(mode, save=true) {
+      const darkClasses = ['dark-mode', 'bg-black-90', 'near-white'];
+      const ligthClasses = ['light-mode', 'bg-near-white', 'black'];
+      if(mode === 'dark') {
+        document.body.classList.add(...darkClasses);
+        document.body.classList.remove(...ligthClasses);
+      } else if(mode === 'light') {
+        document.body.classList.add(...ligthClasses);
+        document.body.classList.remove(...darkClasses);
+      }
+      if (save) window.localStorage.setItem("mode", mode);
+    }
+
+    function getMode() {
+      var hours = (new Date()).getHours();
+      var timeOfDayMode = hours > 6 && hours < 20 ? "light" : "dark";
+      let localStorageMode = window.localStorage.getItem("mode");
+      return (!!localStorageMode) ? localStorageMode : timeOfDayMode;
+    }
+
+    window.addEventListener('DOMContentLoaded', function (e) {
+      setMode(getMode(), false);
+    });
+</script>
+
+{% assign post_title = item.url | slice: 20,100 | remove: ".html" | split: "-" | join: " " %}
 
 <body class="content bg-black-90 near-white sans-serif">
   <div class="main">
-    <a id="#top">
+    <a id="top">
 
-    <div class="intro b--dashed bw1 pa3">
-      <p>
+    <div class="intro pa3 {% if page.url == "/" %} b--solid {% else %} b--dashed {% endif %}">
+      <p class="normal">
         Korede Aderele <br/>
         korede [at] drexel.edu <br/>
       </p>
@@ -89,19 +142,32 @@
         <a href="/w">writing</a> and <a href="/photos">photos </a>
       </p>
 
-      <p>
-        <a href="https://twitter.com/korede_ta" target="_blank">twitter</a> <br/>
-        <a href="https://are.na/korede-aderele">are.na</a><br/>
+      <div class="social">
+        <a href="https://instagram.com/koredesphotos" target="_blank">instagram</a> <br/>
         <a href="https://github.com/korede-ta" target="_blank">github</a><br/>
-        <a href="https://open.spotify.com/user/korede_ta" target="_blank">spotify</a><br/>
+        <a href="https://soundcloud.com/koredesbeats" target="_blank">soundcloud</a><br/>
         <a href="https://linkedin.com/in/koredeaderele" target="_blank">linkedin</a><br/>
-      </p>
+        <a href="https://are.na/korede-aderele" target="_blank">are.na</a><br/>
+      </div>
     </div>
 
     {{ content }}
 
-    <div class="bottom b--dotted bw1 pa3">
-      &copy; Korede Aderele 2020 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a href="#top">Top</a>
+    {% if post_title != "" %}
+      &larrow;
+    {% endif %}
+
+    <div class="bottom b--dotted pa3 f7">
+      &copy; Korede Aderele 2020 
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <a id="theme" class="button">theme</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+      <a href="#top" class="button">top</a>
+      <script>
+        document.getElementById('theme').addEventListener('click', function (e) {
+          setMode(getMode() === 'dark' ? 'light' : 'dark');
+        });
+      </script>
     </div>
   </div>
 

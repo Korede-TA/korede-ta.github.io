@@ -1,6 +1,7 @@
 ---
 layout: w
 post: true
+published: false
 ---
 # Passively vs Actively “Checking In”
 

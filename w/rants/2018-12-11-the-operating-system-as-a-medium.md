@@ -1,6 +1,7 @@
 ---
 layout: w
 post: true
+published: false
 ---
 # the operating system as a medium
 

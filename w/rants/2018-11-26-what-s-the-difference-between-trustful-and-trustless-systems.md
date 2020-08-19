@@ -12,13 +12,11 @@ i would say that there's no such thing as a trustless environment? simply enviro
 
 let me give an example:
 
-jack has had jill deliver packages for them* in the past. the first few times this happened, jack had to verify that jill actually delivered the package because they had no trust in jill. subsequently, due to delivered packages
+jack has had jill deliver packages for them in the past. the first few times this happened, jack had to verify that jill actually delivered the package because they had no trust in jill. subsequently, due to delivered packages
 
 a counter example in a trustless context:
 
 jack has had jill deliver their packages multiple times. jack doesn't actually know who jill is and never interacts with them directly. so jack always verifies the package delivery because the deliverer is assumed to be different every time. there's no chance that jack build trust for  jill because they don't interact with/know each other and, in essence, don't trust each other
-
-(* jack and jill are non-binary and use pronouns "they/them/their")
 
 the pertinent question that arises from this framework, especially in the distributed computing context is: is there a realistic extent to which trust can accumulate as a result of a track record of interactions between entities? the implication of this idea could be optimizing verification in blockchains (or other distributed) systems by simply not doing it based on past verifications.
 

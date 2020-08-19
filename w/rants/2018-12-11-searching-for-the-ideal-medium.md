@@ -1,6 +1,7 @@
 ---
 layout: w
 post: true
+published: false
 ---
 # searching for the ideal medium
 

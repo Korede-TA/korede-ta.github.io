@@ -1,6 +1,7 @@
 ---
 layout: w
 post: true
+published: false
 ---
 
 # absolute progress vs relative progress

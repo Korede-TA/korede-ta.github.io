@@ -1,6 +1,7 @@
 ---
 layout: w
 post: true
+published: false
 ---
 # weird thought/anaology on acknowledging flawed standards
 

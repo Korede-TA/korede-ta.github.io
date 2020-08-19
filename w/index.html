@@ -3,7 +3,7 @@ title: Korede's Website
 layout: default
 ---
 
-<div class="center pa3 b--solid bw1">
+<div class="center pa3 b--solid">
 
   <h2>writing</h2>
 
@@ -11,8 +11,9 @@ layout: default
     a bunch of essays i've written, many of which are incomplete or a mess of thoughts
     
     mostly about topics in computer science, plus some stuff about culture, pan-africanism, sociology, art
-    as well as some personal self-reflection
+    and some personal self-reflection
   </p>
+
   <!--
   <h3>sections</h3>
 
@@ -40,11 +41,12 @@ layout: default
   {% assign folder1 = site.pages | where_exp: "item" , "item.path contains 'w'" | sort:"path" %}
   {% for item in folder1 reversed %}
     {% assign post_title = item.url | slice: 20,100 | remove: ".html" | split: "-" | join: " " %}
-    {% if post_title != "" %}
+    {% if post_title != "" && item.draft != true %}
     <p>
       <a href="{{ item.url }}" class="">
         {{ post_title }}
       </a> 
+      &nbsp;
       <sub>
         {{ item.url | slice: 9,10 | remove: ".html" }}
       </sub> 
