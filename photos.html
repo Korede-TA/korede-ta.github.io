@@ -13,15 +13,19 @@ support: [jquery, gallery]
 {% include photoswipe_script.html %}
 
 <style>
-  .sub-gallery {
-    column-count: 4;
-    column-gap: 3px;
-  }
   @media only screen and (max-width: 600px) {
-  .sub-gallery {
-    column-count: 2;
+    .sub-gallery {
+      column-count: 4;
+      column-gap: 3px;
+    }
   }
+  
+  @media only screen and (max-width: 600px) {
+    .sub-gallery {
+      column-count: 2;
+    }
   }
+  
   .thumbnail {
     width: auto; 
     text-align: center; 
