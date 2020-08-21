@@ -10,14 +10,11 @@ support: [jquery, gallery]
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js" integrity="sha512-SxO0cwfxj/QhgX1SgpmUr0U2l5304ezGVhc0AO2YwOQ/C8O67ynyTorMKGjVv1fJnPQgjdxRz6x70MY9r0sKtQ==" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/default-skin/default-skin.min.css" integrity="sha512-Rck8F2HFBjAQpszOB9Qy+NVLeIy4vUOMB7xrp46edxB3KXs2RxXRguHfrJqNK+vJ+CkfvcGqAKMJTyWYBiBsGA==" crossorigin="anonymous" />
-{% include photoswipe_script.html %}
 
 <style>
-  @media only screen and (max-width: 600px) {
-    .sub-gallery {
-      column-count: 4;
-      column-gap: 3px;
-    }
+  .sub-gallery {
+    column-count: 4;
+    column-gap: 1px;
   }
   
   @media only screen and (max-width: 600px) {
@@ -31,6 +28,7 @@ support: [jquery, gallery]
     text-align: center; 
     width: 150px;
     padding: 0; margin: 0;
+    transition: 0.3s;
   }
 
   .thumbnail > img {
@@ -38,6 +36,41 @@ support: [jquery, gallery]
     height: 100%; 
     object-fit: contain; 
     padding: 0; margin: 0;
+    opacity: 1;
+  }
+
+  .photo-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  }
+
+  /* Modal Content (Image) */
+  .photo-modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+  }
+
+  /* Caption of Modal Image (Image Text) - Same Width as the Image */
+  #photo-modal-caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
   }
 </style>
 
@@ -74,68 +107,39 @@ support: [jquery, gallery]
       {% assign photos = site.data.photos | sample: n %}
       {% for photo in photos %}
         <div class="thumbnail">
-          <img class="photo" src="{{ photo.thumbnail }}" h="{{ photo.h }}" w="{{ photo.w }}" index="{{ forloop.index }}"/>
+          <img 
+            class="photo"
+            src="{{ photo.thumbnail }}"
+            h="{{ photo.h }}"
+            w="{{ photo.w }}"
+            index="{{ forloop.index }}"/>
         </div>
       {% endfor %}
     </div>
 
-    <!-- Root element of PhotoSwipe. Must have class pswp. -->
-    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-      <!-- Background of PhotoSwipe. 
-          It's a separate element as animating opacity is faster than rgba(). -->
-      <div class="pswp__bg"></div>
-
-      <!-- Slides wrapper with overflow:hidden. -->
-      <div class="pswp__scroll-wrap">
-
-          <!-- Container that holds slides. 
-              PhotoSwipe keeps only 3 of them in the DOM to save memory.
-              Don't modify these 3 pswp__item elements, data is added later on. -->
-          <div class="pswp__container">
-              <div class="pswp__item"></div>
-              <div class="pswp__item"></div>
-              <div class="pswp__item"></div>
-          </div>
-
-          <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-          <div class="pswp__ui pswp__ui--hidden">
-              <div class="pswp__top-bar">
-                  <!--  Controls are self-explanatory. Order can be changed. -->
-                  <div class="pswp__counter"></div>
-                  <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                  <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-
-                  <div class="pswp__preloader">
-                      <div class="pswp__preloader__icn">
-                        <div class="pswp__preloader__cut">
-                          <div class="pswp__preloader__donut"></div>
-                        </div>
-                      </div>
-                  </div>
-              </div>
-
-              <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                  <div class="pswp__share-tooltip"></div> 
-              </div>
-
-              <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-              </button>
-
-              <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-              </button>
-
-              <div class="pswp__caption">
-                  <div class="pswp__caption__center"></div>
-              </div>
-          </div>
-      </div>
+    <div id="photo-modal" class="photo-modal">
+      <span class="close f7">&times;</span>
+      <img class="photo-modal-content" id="photo-modal-content">
+      <div id="photo-modal-caption"></div>
+    </div>
   </div>
-  </div>
+
   <script>
     let items = [];
 
     let subGallery = document.getElementsByClassName("sub-gallery")[0];
+
+    function showModal (url) {
+      let img = document.getElementById('photo-modal-content');
+      img.src = url;
+      img.onclick = function (e) { e.preventDefault(); }
+      let modal = document.getElementById('photo-modal');
+      modal.style.display = "block";
+      modal.onclick = function (e) {
+        modal.style.display = "none";
+      }
+    }  
+
     // parse img tags in DOM into PhotoSwipe structure
     for (let item of subGallery.children) {
       let img = item.firstElementChild;
@@ -144,18 +148,15 @@ support: [jquery, gallery]
         h: parseInt(img.getAttribute("h")),
         w: parseInt(img.getAttribute("w")),
       });
+      img.onclick = function (e) {
+        showModal(e.target.getAttribute("src"));
+      };
+      img.onscroll = function (e) {
+        if (window.scrollTop > e.target.offsetTop - 150)
+          e.target.style.opacity = 1;
+      };
     }
     console.log(items);
-
-    let pswpElement = document.querySelectorAll('.pswp')[0];
-    var pswp = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items);
-    // add maximize event to each photo
-    for (let item of subGallery.children) {
-      item.addEventListener('click', function(e) {
-        pswp.init();
-        pswp.goTo(e.target.getAttribute("photo-index") ?? 0);
-      });
-    }
   </script>
 
 </div>
