@@ -1,3 +1,5 @@
+{%- include base.html -%}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,8 +24,8 @@
 	<meta property="twitter:description" content="Lagos-born Philly-based Software Engineer">
 	<meta property="twitter:image" content="https://agbero.dev/slack_profile.png">
 
-	<link rel="stylesheet" href="/tachyons.min.css">
-	<link rel="icon" href="/2_jul_18_noalpha.gif">
+  <link rel="stylesheet" href="{{base}}/tachyons.min.css">
+	<link rel="icon" href="{{base}}/2_jul_18_noalpha.gif">
 
   <style>
     html { scroll-behavior: smooth; } 
@@ -152,10 +154,12 @@
       </p>
 
       <p>
-        <a href="/about">about</a>
-      </p>
+        <a href="{{base}}/about">about</a>
+	<div class="mb1"></div>
+        <a href="{{base}}/resume.pdf">resume</a>
       <p>
-        <a href="/w">writing</a> and <a href="/photos">photos </a>
+      <p>
+        <a href="{{base}}/w">writing</a> and <a href="{{base}}/photos">photos </a>
       </p>
 
       <div class="social">
